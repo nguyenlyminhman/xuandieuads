@@ -83,7 +83,13 @@ Route::group(['prefix'=>'admin'], function(){
         Route::get('get-all-post', 'PostController@getPostList');
 
         Route::get('add-new-post', 'PostController@getPostForm');
-       // Route::post('add-new-post', 'PostController@addToPostList');
-        
+        Route::post('add-new-post', 'PostController@addToPostList');
     });
+
+     //route for ajax get subcategory.
+     Route::group(['prefix'=>'ajax'], function(){
+        Route::get('subcategory/{idmaincategory}', 'AjaxController@getSubCategory');
+    });
+        
+    
 });

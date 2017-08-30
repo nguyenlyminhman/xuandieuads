@@ -11,9 +11,10 @@
 
     <title>SB Admin 2 - Bootstrap Admin Theme</title>
 	<base href="{{asset('')}}">
-
     <!-- Bootstrap Core CSS -->
     <link href="admin_asset/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Date Picker -->
+    <link href="admin_asset/vendor/datepicker/css/bootstrap-datepicker.css" rel="stylesheet">
     
     <!-- MetisMenu CSS -->
     <link href="admin_asset/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
@@ -75,15 +76,26 @@
     <script src="admin_asset/vendor/datatables/js/jquery.dataTables.min.js"></script>
     <script src="admin_asset/vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
     <script src="admin_asset/vendor/datatables-responsive/dataTables.responsive.js"></script>
+    <!--using for ck editor-->
     <script type="text/javascript" src="admin_asset/ckeditor/ckeditor.js"></script>
+    <!--using for datepicker-->
+    <script src="admin_asset/vendor/datepicker/js/bootstrap-datepicker.js"></script>
+    
     <!--Confirmation JavaScripts--> 
     <script>
         $(document).ready(function() {
+            
             $('#dataTables-example').DataTable({
                 responsive: true
             });
+            
+            $('#example1').datepicker({
+                    format: "dd/mm/yyyy"
+                });
+            
         });
     </script>
+    @yield('script')
 </body>
 
 </html>

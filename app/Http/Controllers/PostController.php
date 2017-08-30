@@ -4,12 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use App\MainCategory;
+use App\SubCategory;
 
 class PostController extends Controller
 {
     //
     public function getPostForm(){
-        return view('admin.post.addnewpost');
+        $mainmenu = MainCategory::all();
+        $submenu = SubCategory::all();
+        return view('admin.post.addnewpost', ['mainmenu'=>$mainmenu, 'submenu'=>$submenu]);
     }
 
 }
