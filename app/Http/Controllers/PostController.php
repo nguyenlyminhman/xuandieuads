@@ -45,7 +45,7 @@ class PostController extends Controller
                 $img_name = str_random(8)."_".$name;
             }
             $file->move("upload/image",$img_name);
-            $image->image = $img_name;
+            $post->image = $img_name;
         }
 
         $post->title = $request->title;
@@ -53,13 +53,14 @@ class PostController extends Controller
         $post->link_to = $request->link_to;
         $post->discount = $request->discount;
         $post->discount_code = $request->discount_code;
-        $post->expired_date = date("Y-m-d", $request->expired_date );
+        
         $post->short_content = $request->short_content;
         $post->full_content = $request->full_content;
         $post->click_counter = "0";
-        $post->hight_light = $request->hlight;
+        $post->high_light = $request->hlight;
         $post->created_at = date("Y-m-d");
         $post->updated_at = date("Y-m-d");
+        $post->expired_at = $request->expired_date;
         $post->fk_idSubCategory = $request->subcategory;
         $post->save();
         return redirect("admin/post/add-new-post")->with('notification','Đã thêm thành công');
