@@ -27,7 +27,7 @@
                         <input type="hidden" name="_token" value="{{csrf_token()}}" />
                         <div class="form-group">
                             <label for="exampleInputEmail1">Chuyên Mục Chính:</label>
-                            <select name="maincategory" id="maincategory" class="form-control selectpicker">
+                            <select name="maincategory" id="maincategory" class="form-control selectpicker" data-style="btn-primary">
                             <option value="">--Chọn Chuyên Mục Chính--</option>
                             @foreach($mainmenu as $mmenu)
                                 <option value="{{$mmenu->id}}">{{$mmenu->main_cate_name}}</option>
@@ -37,9 +37,9 @@
                         <div class="form-group">
                             <label for="exampleInputEmail1">Chuyên Mục Phụ:</label>
                             <select name="subcategory" id="subcategory" class="form-control selectpicker" required>
-                                @foreach($submenu as $smenu)
+                                {{--  @foreach($submenu as $smenu)
                                     <option value="{{$smenu->id}}">{{$smenu->sub_cate_name}}</option>
-                                @endforeach
+                                @endforeach  --}}
                             </select>
                         </div>
                         <div class="form-group">

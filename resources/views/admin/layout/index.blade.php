@@ -85,12 +85,17 @@
     <script>
         $(document).ready(function() {
             $('#dataTables-example').DataTable({
-                responsive: true
+                "responsive":true,
             });
+            
+            $('#dataTablesPost').DataTable({
+                "responsive":true,
+                "aaSorting": [[ 0, "desc" ]]
+            });
+            
             $('#example1').datepicker({
                     format: "yyyy-mm-dd"
                 });
-            
         });
     </script>
     @yield('script')

@@ -11,7 +11,7 @@ class PostController extends Controller
 {
     
     public function getPostList(){
-        $post = Post::orderBy('id','ASC')->get();
+        $post = Post::orderBy('id','desc')->get();
         return view('admin.post.allpost',['post'=>$post]);
     }
     //discount
@@ -109,5 +109,6 @@ class PostController extends Controller
         return redirect("admin/post/add-new-ads")->with('notification','Đã thêm thành công');
 
     }
+  
 
 }
