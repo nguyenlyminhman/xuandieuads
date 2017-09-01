@@ -14,38 +14,36 @@
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Tên Menu</th>
-                                <th>Tên Không Dấu</th>
-                                <th>Trạng Thái</th>
-                                <th>Ngày Tạo</th>
-                                <th>Lần Cuối Cập Nhật</th>
-                                <th>Lựa Chọn</th>
+                                <th>Tiêu Đề</th>
+                                <th>Tóm Tắt</th>
+                                <th>Mục Chính</th>
+                                <th>Mục Phụ</th>
+                                <th>Lượt Xem</th>
+                                <th>Nổi Bật</th>
+                                <th>Tùy Chọn</th>
                             </tr>
                         </thead>
                         <tbody>
-                        {{--  @foreach($post as $pt)
+                        @foreach($post as $pt)
                             <tr>
                                 <td>{{$pt->id}}</td>
+                                <td>{{$pt->title}}</td>
+                                <td>{{$pt->short_content}}</td>
+                                <td>{{$pt->subCategory->mainCategory->main_cate_name}}</td>
+                                <td>{{$pt->subCategory->sub_cate_name}}</td>
+                                <td>{{$pt->click_counter}}</td>
+                                <td>{{$pt->high_light == 0 ? "Có" : "Không"}}</td>
                                 <td>
-                                    {{$pt->title}}
-                                    <p>{{$pt->image}} </p>
-                                </td>
-                                <td>{{}}</td>
-
-                                <td>{{date("d/m/Y", strtotime($menu->created_at))}}</td>
-                                <td>{{date("d/m/Y", strtotime($menu->updated_at))}}</td>
-                                <td>
-                                <a href="admin/main-menu/edit/{{$menu->id}}" type="button" class="btn btn-warning">Chỉnh Sửa</a>
-                                    @if($menu->main_cate_status== 0)
-                                        <a  href="admin/main-menu/delete/{{$menu->id}}" type="button" class="btn btn-danger" 
+                                    <a href="admin/post/edit/{{$pt->id}}" type="button" class="btn btn-warning">Chỉnh Sửa</a>
+                                    @if($pt->main_cate_status== 0)
+                                        <a  href="admin/post/delete/{{$pt->id}}" type="button" class="btn btn-danger" 
                                             onclick='return confirm("Lưu Ý: Sau khi xóa dữ liệu liên quan cũng sẽ mất.\n           Có chắc muốn xóa dòng này?");'>
                                             Xóa
                                         </a>
-                                    
                                     @endif
                                 </td>
                             </tr>
-                            @endforeach  --}}
+                            @endforeach
                         </tbody>
                     </table>
                 <!-- /.table-responsive -->

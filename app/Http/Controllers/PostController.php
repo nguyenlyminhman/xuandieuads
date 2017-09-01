@@ -11,9 +11,7 @@ class PostController extends Controller
 {
     
     public function getPostList(){
-        $post = Post::all();
-        $mainmenu = MainCategory::all();
-        $submenu = SubCategory::all();
+        $post = Post::orderBy('id','ASC')->get();
         return view('admin.post.allpost',['post'=>$post]);
     }
     //discount
