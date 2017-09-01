@@ -1,45 +1,59 @@
-@extends('admin.layout.index');
-@section('content');
+@extends('admin.layout.index')
+@section('content')
+<!-- /.row -->
+<br>
 <div class="row">
     <div class="col-lg-12">
-        <section class="panel">
-            <header class="panel-heading">
-                Menu Management
-            </header>
-            <div class="panel-body">
-                <div class="position-center">
-                    <form role="form">
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Email address</label>
-                            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputFile">File input</label>
-                            <input type="file" id="exampleInputFile">
-                            <p class="help-block">Example block-level help text here.</p>
-                        </div>
-                        <div class="checkbox">
-                            <label>
-                                    <input type="checkbox"> Check me out
-                                </label>
-                        </div>
-                        <button type="submit" class="btn btn-info">Submit</button>
-                    </form>
-                </div>
+        <div class="panel panel-default">
+            <div class="panel-heading text-center">
+                <h3>Danh Sách Bài Viết</h3>
             </div>
-        </section>
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                    <table width="100%" class="table table-striped table-bordered table-hover"  id="dataTables-example">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Tên Menu</th>
+                                <th>Tên Không Dấu</th>
+                                <th>Trạng Thái</th>
+                                <th>Ngày Tạo</th>
+                                <th>Lần Cuối Cập Nhật</th>
+                                <th>Lựa Chọn</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {{--  @foreach($post as $pt)
+                            <tr>
+                                <td>{{$pt->id}}</td>
+                                <td>
+                                    {{$pt->title}}
+                                    <p>{{$pt->image}} </p>
+                                </td>
+                                <td>{{}}</td>
+
+                                <td>{{date("d/m/Y", strtotime($menu->created_at))}}</td>
+                                <td>{{date("d/m/Y", strtotime($menu->updated_at))}}</td>
+                                <td>
+                                <a href="admin/main-menu/edit/{{$menu->id}}" type="button" class="btn btn-warning">Chỉnh Sửa</a>
+                                    @if($menu->main_cate_status== 0)
+                                        <a  href="admin/main-menu/delete/{{$menu->id}}" type="button" class="btn btn-danger" 
+                                            onclick='return confirm("Lưu Ý: Sau khi xóa dữ liệu liên quan cũng sẽ mất.\n           Có chắc muốn xóa dòng này?");'>
+                                            Xóa
+                                        </a>
+                                    
+                                    @endif
+                                </td>
+                            </tr>
+                            @endforeach  --}}
+                        </tbody>
+                    </table>
+                <!-- /.table-responsive -->
+            </div>
+            <!-- /.panel-body -->
+        </div>
+        <!-- /.panel -->
     </div>
+    <!--end-danh sach menu chinh-->
 </div>
 @endsection

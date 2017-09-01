@@ -9,14 +9,20 @@ use App\SubCategory;
 
 class PostController extends Controller
 {
-    //
-    public function getPostForm(){
+    
+    public function getPostList(){
+        $post = Post::all();
         $mainmenu = MainCategory::all();
         $submenu = SubCategory::all();
-        return view('admin.post.addnewpost', ['mainmenu'=>$mainmenu, 'submenu'=>$submenu]);
+        return view('admin.post.allpost',['post'=>$post]);
     }
-
-    public function addToPostList(Request $request){
+    //discount
+    public function getDiscountForm(){
+        $mainmenu = MainCategory::all();
+        $submenu = SubCategory::all();
+        return view('admin.post.addnewdiscount', ['mainmenu'=>$mainmenu, 'submenu'=>$submenu]);
+    }
+    public function addToDiscountList(Request $request){
         $post = new Post;
         $this->validate($request,
         [
@@ -37,6 +43,46 @@ class PostController extends Controller
             'short_content.max'=>'Nội dung tóm tắt từ 5 đến 100 kí tự.'
         ]);
 
+        $post->title = $request->title;
+        $post->title_seolink = removeURL($request->title);
+        $post->link_to = $request->link_to;
+        $post->discount = $request->discount;
+        $post->discount_code = $request->discount_code;
+        $post->image = "defaul.jpg";
+        $post->short_content = $request->short_content;
+        $post->full_content = "nothing";
+        $post->click_counter = "0";
+        $post->high_light = $request->hlight;
+        $post->created_at = date("Y-m-d");
+        $post->updated_at = date("Y-m-d");
+        $post->expired_at = $request->expired_date;
+        $post->fk_idSubCategory = $request->subcategory;
+        $post->save();
+        return redirect("admin/post/add-new-discount-code")->with('notification','Đã thêm thành công');
+    }
+    //advertisment
+    public function getAdsForm(){
+        $mainmenu = MainCategory::all();
+        $submenu = SubCategory::all();
+        return view('admin.post.addnewads', ['mainmenu'=>$mainmenu, 'submenu'=>$submenu]);
+    }
+    public function addToAdsList(Request $request){
+        $post = new Post;
+        $this->validate($request,
+        [
+            'title'=>'required|min:5|max:250',
+            'short_content'=>'required|min:5|max:500'
+        ]
+        ,
+        [
+            'title.required'=>'Hãy nhập tiêu đề.',
+            'title.min'=>'Tiêu đề từ 5 đến 250 kí tự',
+            'title.max'=>'Tiêu đề từ 5 đến 250 kí tự',
+            'short_content.required'=>'Hãy nhập vào nội dung tóm tắt.',
+            'short_content.min'=>'Nội dung tóm tắt từ 5 đến 100 kí tự.',
+            'short_content.max'=>'Nội dung tóm tắt từ 5 đến 100 kí tự.'
+        ]);
+
         if($request->hasFile('imgfile')){
             $file = $request->file('imgfile');
             $name = $file -> getClientOriginalName();
@@ -50,20 +96,20 @@ class PostController extends Controller
 
         $post->title = $request->title;
         $post->title_seolink = removeURL($request->title);
-        $post->link_to = $request->link_to;
-        $post->discount = $request->discount;
-        $post->discount_code = $request->discount_code;
-        
+        $post->link_to = "";
+        $post->discount = "";
+        $post->discount_code = "";
         $post->short_content = $request->short_content;
         $post->full_content = $request->full_content;
         $post->click_counter = "0";
         $post->high_light = $request->hlight;
         $post->created_at = date("Y-m-d");
         $post->updated_at = date("Y-m-d");
-        $post->expired_at = $request->expired_date;
+        $post->expired_at = date("Y-m-d");
         $post->fk_idSubCategory = $request->subcategory;
         $post->save();
-        return redirect("admin/post/add-new-post")->with('notification','Đã thêm thành công');
+        return redirect("admin/post/add-new-ads")->with('notification','Đã thêm thành công');
 
     }
+
 }

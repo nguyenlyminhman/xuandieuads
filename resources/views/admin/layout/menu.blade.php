@@ -45,28 +45,28 @@
                             <a href="#"><i class="fa fa-sitemap fa-fw"></i> Bài Viết<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="admin/post/add-new-post">Thêm Bài Mới</a>
+                                    <a href="admin/post/get-all-post">Xem Tất Cả Bài Viết </a>
                                 </li>
                                 <li>
-                                    <a href="#">Thêm Mã Giảm Giá</a>
-                                </li>
-                                <li>
-                                    <a href="#">Thêm Mã Giảm Giá</a>
-                                </li>
-                                <li>
-                                    <a href="#">Third Level <span class="fa arrow"></span></a>
+                                    <a href="#">Mã Giảm Giá<span class="fa arrow"></span></a>
                                     <ul class="nav nav-third-level">
                                         <li>
-                                            <a href="#">Third Level Item</a>
+                                            <a href="admin/post/add-new-discount-code">Thêm Mã Giảm Giá</a>
                                         </li>
                                         <li>
-                                            <a href="#">Third Level Item</a>
+                                            <a href="#">Xem Tất Cả Mã Giảm Giá</a>
+                                        </li>
+                                    </ul>
+                                    <!-- /.nav-third-level -->
+                                </li>
+                                <li>
+                                    <a href="#">Tin Khuyến Mãi<span class="fa arrow"></span></a>
+                                    <ul class="nav nav-third-level">
+                                         <li>
+                                            <a href="admin/post/add-new-ads">Đăng Tin Khuyến Mãi</a>
                                         </li>
                                         <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Item</a>
+                                            <a href="#">Xem Tất Cả Tin Khuyến Mãi</a>
                                         </li>
                                     </ul>
                                     <!-- /.nav-third-level -->

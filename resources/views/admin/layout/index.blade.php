@@ -84,11 +84,9 @@
     <!--Confirmation JavaScripts--> 
     <script>
         $(document).ready(function() {
-            
             $('#dataTables-example').DataTable({
                 responsive: true
             });
-            
             $('#example1').datepicker({
                     format: "yyyy-mm-dd"
                 });

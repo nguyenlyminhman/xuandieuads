@@ -75,21 +75,31 @@ Route::group(['prefix'=>'admin'], function(){
 
      //route for post
      Route::group(['prefix'=>'post'], function(){
+
+        //editing discount post information  
         Route::get('edit/{id}', 'PostController@updatePost');
         Route::get('edit/{id}', 'PostController@editPost');
-
+        //deleting discount post information
         Route::get('delete/{id}', 'PostController@deletePost');
 
+        //get all post
         Route::get('get-all-post', 'PostController@getPostList');
+        Route::get('get-all-ads', 'PostController@getAdsList');
+        Route::get('get-all-discount', 'PostController@getDiscountList');
 
-        Route::get('add-new-post', 'PostController@getPostForm');
-        Route::post('add-new-post', 'PostController@addToPostList');
+        //adding new discount code
+        Route::get('add-new-discount-code', 'PostController@getDiscountForm');
+        Route::post('add-new-discount-code', 'PostController@addToDiscountList');
+
+        //adding new ads information
+        Route::get('add-new-ads', 'PostController@getAdsForm');
+        Route::post('add-new-ads', 'PostController@addToAdsList');
+
+       
     });
-
      //route for ajax get subcategory.
+
      Route::group(['prefix'=>'ajax'], function(){
         Route::get('subcategory/{idmaincategory}', 'AjaxController@getSubCategory');
     });
-        
-    
 });
