@@ -102,4 +102,15 @@ Route::group(['prefix'=>'admin'], function(){
      Route::group(['prefix'=>'ajax'], function(){
         Route::get('subcategory/{idmaincategory}', 'AjaxController@getSubCategory');
     });
+
+    //route for user
+    Route::group(['prefix'=>'user'], function(){
+        Route::get('delete/{id}', 'UsersController@deleteUser');
+
+        Route::get('edit/{id}', 'UsersController@editUser');
+        Route::post('edit/{id}', 'UsersController@updateUser');
+
+        Route::post('get-all-user', 'UsersController@postUser');
+        Route::get('get-all-user', 'UsersController@getAllUser');
+    });
 });

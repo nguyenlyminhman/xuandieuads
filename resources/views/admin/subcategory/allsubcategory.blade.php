@@ -90,7 +90,7 @@
                                 <td>{{date("d/m/Y", strtotime($smenu->created_at))}}</td>
                                 <td>{{date("d/m/Y", strtotime($smenu->updated_at))}}</td>
                                 <td>
-                                <a href="admin/sub-menu/edit/{{$smenu->id}}" type="button" class="btn btn-warning">Chỉnh Sửa</a>
+                                <a href="admin/sub-menu/edit/{{$smenu->id}}" type="button" class="btn btn-warning">Sửa</a>
                                     @if($smenu->sub_cate_status== 0)
                                         <a  href="admin/sub-menu/delete/{{$smenu->id}}" type="button" class="btn btn-danger" 
                                             onclick='return confirm("Lưu ý: Sau khi xóa, tất cả bài viết liên quan cũng sẽ mất.\n           Có chắc muốn xóa chuyên mục này?");'>Xóa</a>

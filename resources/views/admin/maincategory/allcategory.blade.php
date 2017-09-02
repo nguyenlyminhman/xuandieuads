@@ -44,6 +44,8 @@
                     <button type="reset" class="btn btn-default">Đặt Lại</button>
                     <button type="button" class="btn btn-default" data-toggle="collapse" data-target="#addMenu">Ẩn Hộp Thoại</button>
                 </form>
+                <br>
+                <div class="clearfix"></div>
             </div>
         </div>
         <!--end add new menu item-->

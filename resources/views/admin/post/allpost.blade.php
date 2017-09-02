@@ -28,13 +28,13 @@
                             <tr class="even gradeA">
                                 <td>{{$pt->id}}</td>
                                 <td>{{$pt->title}}</td>
-                                <td>{{$pt->short_content}}</td>
+                                <td><p>{{$pt->short_content}}</p></td>
                                 <td>{{$pt->subCategory->mainCategory->main_cate_name}}</td>
                                 <td>{{$pt->subCategory->sub_cate_name}}</td>
                                 <td>{{$pt->click_counter}}</td>
                                 <td>{{$pt->high_light == 0 ? "Có" : "Không"}}</td>
                                 <td>
-                                    <a href="admin/post/edit/{{$pt->id}}" type="button" class="btn btn-warning">Chỉnh Sửa</a>
+                                    <a href="admin/post/edit/{{$pt->id}}" type="button" class="btn btn-warning">Sửa</a><br><br>
                                     @if($pt->main_cate_status== 0)
                                         <a  href="admin/post/delete/{{$pt->id}}" type="button" class="btn btn-danger" 
                                             onclick='return confirm("Lưu Ý: Sau khi xóa dữ liệu liên quan cũng sẽ mất.\n           Có chắc muốn xóa dòng này?");'>

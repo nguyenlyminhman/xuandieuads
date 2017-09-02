@@ -19,6 +19,9 @@
     <!-- MetisMenu CSS -->
     <link href="admin_asset/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
 
+    <!-- Datatable CSS -->
+    <link href="admin_asset/vendor/datatables/css/dataTables.bootstrap.css" rel="stylesheet">
+
     <!-- Custom CSS -->
     <link href="admin_asset/dist/css/sb-admin-2.css" rel="stylesheet">
 
@@ -90,7 +93,7 @@
             
             $('#dataTablesPost').DataTable({
                 "responsive":true,
-                "aaSorting": [[ 0, "desc" ]]
+                "aaSorting": [[ 0, "desc" ]],
             });
             
             $('#example1').datepicker({

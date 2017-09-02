@@ -75,15 +75,15 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
+                            <a href="admin/user/get-all-user"><i class="fa fa-files-o fa-fw"></i> Người Dùng<span class="fa arrow"></span></a>
+                            {{--  <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="blank.html">Blank Page</a>
+                                    <a href="blank.html">Xem Tất Cả</a>
                                 </li>
                                 <li>
                                     <a href="login.html">Login Page</a>
                                 </li>
-                            </ul>
+                            </ul>  --}}
                             <!-- /.nav-second-level -->
                         </li>
                     </ul>

@@ -109,6 +109,4 @@ class PostController extends Controller
         return redirect("admin/post/add-new-ads")->with('notification','Đã thêm thành công');
 
     }
-  
-
 }
