@@ -25,7 +25,7 @@
             <div class="clearfix"> </div>
             <div class="panel-body">
                 <div class="position-center col-lg-6">
-                    <form action="admin/categoryimg/edit/{{$cimage->id}}" method="POST">
+                    <form action="admin/user/editinfo/{{$user->id}}" method="POST">
                         <input type="hidden" name="_token" value="{{csrf_token()}}" />
                         <div class="form-group">
                             <label for="email">Tên Menu: </label>

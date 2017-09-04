@@ -13,13 +13,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('admin/login', 'UserController@getLoginForm');
+Route::post('admin/login', 'UserController@loginAdmin');
+
 //route for main-menu
 Route::group(['prefix'=>'admin'], function(){
-
     Route::get('dashboard', function(){
         return view('admin.layout.index');
     });
-    
     Route::group(['prefix'=>'main-menu'], function(){
         //getting main menu info
         Route::get('edit/{id}', 'MainMenuController@editMainMenu');
@@ -47,9 +48,6 @@ Route::group(['prefix'=>'admin'], function(){
         Route::get('delete/{id}', 'SubMenuController@deleteSubMenu');
 
     });
-
-   
-
     //route for category-image
     Route::group(['prefix'=>'categoryimg'], function(){
         
@@ -61,7 +59,6 @@ Route::group(['prefix'=>'admin'], function(){
         Route::get('get-all-category-image', 'CategoryImageController@getCategoryImgList');
         Route::post('get-all-category-image', 'CategoryImageController@postCategoryImg');
     });
-
     //route for image
     Route::group(['prefix'=>'image'], function(){
         Route::get('delete/{id}', 'ImageController@deleteImage');
@@ -72,16 +69,13 @@ Route::group(['prefix'=>'admin'], function(){
         Route::post('get-all-image', 'ImageController@postImage');
         Route::get('get-all-image', 'ImageController@getAllImage');
     });
-
      //route for post
      Route::group(['prefix'=>'post'], function(){
-
         //editing discount post information  
         Route::get('edit/{id}', 'PostController@updatePost');
         Route::get('edit/{id}', 'PostController@editPost');
         //deleting discount post information
         Route::get('delete/{id}', 'PostController@deletePost');
-
         //get all post
         Route::get('get-all-post', 'PostController@getPostList');
         Route::get('get-all-ads', 'PostController@getAdsList');
@@ -94,23 +88,19 @@ Route::group(['prefix'=>'admin'], function(){
         //adding new ads information
         Route::get('add-new-ads', 'PostController@getAdsForm');
         Route::post('add-new-ads', 'PostController@addToAdsList');
-
-       
     });
      //route for ajax get subcategory.
-
      Route::group(['prefix'=>'ajax'], function(){
         Route::get('subcategory/{idmaincategory}', 'AjaxController@getSubCategory');
     });
-
     //route for user
     Route::group(['prefix'=>'user'], function(){
-        Route::get('delete/{id}', 'UsersController@deleteUser');
+        Route::get('delete/{id}', 'UserController@deleteUser');
 
-        Route::get('edit/{id}', 'UsersController@editUser');
-        Route::post('edit/{id}', 'UsersController@updateUser');
+        Route::get('edit/{id}', 'UserController@editUser');
+        Route::post('edit/{id}', 'UserController@updateUser');
 
-        Route::post('get-all-user', 'UsersController@postUser');
-        Route::get('get-all-user', 'UsersController@getAllUser');
+        Route::post('get-all-user', 'UserController@postUser');
+        Route::get('get-all-user', 'UserController@getAllUser');
     });
 });

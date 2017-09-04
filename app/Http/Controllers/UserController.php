@@ -2,25 +2,26 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
-use App\Users;
+use App\User;
 
-class UsersController extends Controller
+class UserController extends Controller
 {
     //
     public function getAllUser (){
-       $user = Users::all();
+       $user = User::all();
        return view('admin.user.alluser', ['user'=>$user]);
     }
     //add more menu name
     public function postUser(Request $request){
-        $user = new Users;
+        $user = new User;
         $this->validate($request,
         [
             'fname'=>'required|min:3|max:100',
             'lname'=>'required|min:3|max:100',
-            'email'=>'required|unique:manager,email|min:5|max:100',
-            'password'=>'required|min:8|max:45'
+            'email'=>'required|unique:users,email|min:5|max:100',
+            'password'=>'re quired|min:8|max:45'
         ],
         [
             'fname.required'=>'Chưa nhập tên người dùng.',
@@ -51,18 +52,35 @@ class UsersController extends Controller
     }
     //
     public function editUser ($id){
-        $user = Users::find($id);
+        $user = User::find($id);
         return view('admin.user.edit', ['user'=>$user]);     
     }
-    //
-    public function updateUser (Request $request, $id){
-        
+    //not yet
+    public function updateUserInfo (Request $request, $id){
     }
-   
-    //
+    //not yet
+    public function updateUserPass (Request $request, $id){
+    }
+    //not yet
     public function deleteUser($id){
-        $user = Users::find($id);
+        $user = User::find($id);
         $user->delete();
         return redirect('admin/user/get-all-user')->with('notification','Đã xóa người dùng thành công !!!');
     }
+    //get login form
+    public function getLoginForm(){
+        return view('admin.login');
+    }
+    //check login user
+    public function loginAdmin(Request $request) {
+        // $this->validate($request);
+        if(Auth::attempt(['email' => $request->email, 'password' => $request->password]))
+        {
+            return redirect('admin/dashboard');
+        }else{
+            return redirect('admin/login')->with('notification','Dang nhap that bai. Kiem tra email va password');
+        }
+    }
+    
+
 }

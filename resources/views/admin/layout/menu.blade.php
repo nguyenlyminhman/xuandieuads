@@ -42,7 +42,7 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> Bài Viết<span class="fa arrow"></span></a>
+                            <a href="#"><i class="glyphicon glyphicon-book"></i> Bài Viết<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="admin/post/get-all-post">Xem Tất Cả Bài Viết </a>
@@ -75,7 +75,7 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="admin/user/get-all-user"><i class="fa fa-files-o fa-fw"></i> Người Dùng<span class="fa arrow"></span></a>
+                            <a href="admin/user/get-all-user"><i class="glyphicon glyphicon-user"></i> Người Dùng<span class="fa arrow"></span></a>
                             {{--  <ul class="nav nav-second-level">
                                 <li>
                                     <a href="blank.html">Xem Tất Cả</a>

@@ -1,46 +1,89 @@
+
+
 <!DOCTYPE html>
+<html lang="en">
+
 <head>
-<title>Visitors an Admin Panel Category Bootstrap Responsive Website Template | Login :: w3layouts</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Visitors Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<!-- bootstrap-css -->
-<link rel="stylesheet" href="admin_asset/css/bootstrap.min.css" >
-<!-- //bootstrap-css -->
-<!-- Custom CSS -->
-<link href="admin_asset/css/style.css" rel='stylesheet' type='text/css' />
-<link href="admin_asset/css/style-responsive.css" rel="stylesheet"/>
-<!-- font CSS -->
-{{--  <link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>  --}}
-<!-- font-awesome icons -->
-<link rel="stylesheet" href="admin_asset/css/font.css" type="text/css"/>
-<link href="admin_asset/css/font-awesome.css" rel="stylesheet"> 
-<!-- //font-awesome icons -->
-<script src="admin_asset/js/jquery2.0.3.min.js"></script>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>SB Admin 2 - Bootstrap Admin Theme</title>
+	<base href="{{asset('')}}">
+    <!-- Bootstrap Core CSS -->
+    <link href="admin_asset/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="admin_asset/dist/css/sb-admin-2.css" rel="stylesheet">
+
+	<link href="admin_asset/vendor/login/login.css" rel="stylesheet">
+
 </head>
 <body>
-<div class="log-w3">
-<div class="w3layouts-main">
-	<h2>Sign In Now</h2>
-		<form action="#" method="post">
-			<input type="email" class="ggg" name="Email" placeholder="E-MAIL" required="">
-			<input type="password" class="ggg" name="Password" placeholder="PASSWORD" required="">
-			<span><input type="checkbox" />Remember Me</span>
-			<h6><a href="#">Forgot Password?</a></h6>
-				<div class="clearfix"></div>
-				<input type="submit" value="Sign In" name="login">
-		</form>
-		<p>Don't Have an Account ?<a href="registration.html">Create an account</a></p>
-</div>
-</div>
-<script src="admin_asset/js/bootstrap.js"></script>
-<script src="admin_asset/js/jquery.dcjqaccordion.2.7.js"></script>
-<script src="admin_asset/js/scripts.js"></script>
-<script src="admin_asset/js/jquery.slimscroll.js"></script>
-<script src="admin_asset/js/jquery.nicescroll.js"></script>
-<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="js/flot-chart/excanvas.min.js"></script><![endif]-->
-<script src="admin_asset/js/jquery.scrollTo.js"></script>
+<div class="container">
+ <div class="row">
+	<div class="panel panel-default">
+		<div class="panel-heading text-center">
+			<h2 class="form-signin-heading">Welcome to XuanDieuAds</h2>
+		</div>
+			@if(count($errors)>0)
+                <div class="alert alert-danger">
+                    @foreach($errors->all() as $err)
+                        {{$err}} <br>
+                    @endforeach
+                </div>
+            @endif
+            @if(session('notification'))
+                <div class="alert alert-success">
+                        {{session('notification')}} <br>
+                </div>
+            @endif
+
+		<div class="panel panel-body">
+			<form class="form-signin" action="admin/login" method="POST">
+                <input type="hidden" name="_token" value="{{csrf_token()}}" />
+				<div class="form-group">
+					<label for="inputEmail" class="sr-only">Email address</label>
+					<input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+				</div>
+				<div class="form-group">
+					<label for="inputPassword" class="sr-only">Password</label>
+					<input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
+				</div>
+					<button class="btn btn-lg btn-primary btn-block" type="submit">Sign In</button>
+			</form>
+		</div>
+	</div>
+	</div>
+</div> <!-- /container -->
+    <!-- jQuery -->
+    <script src="admin_asset/vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="admin_asset/vendor/bootstrap/js/bootstrap.min.js"></script>
+    
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="admin_asset/vendor/metisMenu/metisMenu.min.js"></script>
+
+    <!-- Morris Charts JavaScript -->
+    <script src="admin_asset/vendor/raphael/raphael.min.js"></script>
+    <script src="admin_asset/vendor/morrisjs/morris.min.js"></script>
+    <script src="admin_asset/data/morris-data.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="admin_asset/dist/js/sb-admin-2.js"></script>
+    <!-- Page-Level Demo Scripts - Tables - Use for reference -->
+    <!-- DataTables JavaScript -->
+    <script src="admin_asset/vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="admin_asset/vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
+    <script src="admin_asset/vendor/datatables-responsive/dataTables.responsive.js"></script>
+    <!--using for ck editor-->
+    <script type="text/javascript" src="admin_asset/ckeditor/ckeditor.js"></script>
+    <!--using for datepicker-->
+    <script src="admin_asset/vendor/datepicker/js/bootstrap-datepicker.js"></script>
+    
+    <!--Confirmation JavaScripts--> 
 </body>
+
 </html>
