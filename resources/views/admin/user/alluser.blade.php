@@ -38,12 +38,9 @@
                 <input type="hidden" name="_token" value="{{csrf_token()}}" />
                     <div class="form-group">
                         <label for="email">Tên:</label>
-                        <input type="text" class="form-control" name="fname" placeHolder="Nhập tên người dùng" required />
+                        <input type="text" class="form-control" name="name" placeHolder="Nhập tên người dùng" required />
                     </div>
-                    <div class="form-group">
-                        <label for="email">Họ:</label>
-                        <input type="text" class="form-control" name="lname" placeHolder="Nhập họ người dùng" required />
-                    </div>
+                    
                     <div class="form-group">
                         <label for="email">Email:</label>
                         <input type="email" class="form-control" name="email" placeHolder="qwerty@asd.vn" required />
@@ -55,6 +52,11 @@
                     <div class="form-group">
                         <label for="email">Xác Nhận Mật Khẩu:</label>
                         <input type="password" class="form-control" id="confirm_password" name="repassword" placeHolder="Xác nhận mật khẩu" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Quyền:</label><br>
+                        <label class="radio-inline"><input value="0" type="radio" name="level" >Admin</label>
+                        <label class="radio-inline"><input value="1" type="radio" name="level" checked>Thường</label>
                     </div>
                     <button type="submit" class="btn btn-default">Thêm</button>
                     <button type="reset" class="btn btn-default">Đặt Lại</button>
@@ -77,8 +79,8 @@
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Họ</th>
                                 <th>Tên</th>
+                                <th>Quyền</th>
                                 <th>Email</th>
                                 <th>Ngày Tạo</th>
                                 <th>Lần Cập Nhật Cuối</th>
@@ -89,8 +91,8 @@
                         @foreach($user as $ur)
                             <tr>
                                 <td>{{$ur->id}}</td>
-                                <td>{{$ur->lname}}</td>
-                                <td>{{$ur->fname}}</td>
+                                <td>{{$ur->name}}</td>
+                                <td>{{$ur->level==0 ? "Admin":"Thường"}}</td>
                                 <td>{{$ur->email}}</td>
                                 <td>{{date("d/m/Y", strtotime($ur->created_at))}}</td>
                                 <td>{{date("d/m/Y", strtotime($ur->updated_at))}}</td>

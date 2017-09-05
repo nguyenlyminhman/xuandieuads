@@ -75,7 +75,7 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="admin/user/get-all-user"><i class="glyphicon glyphicon-user"></i> Người Dùng<span class="fa arrow"></span></a>
+                            <a href="admin/user/get-all-user"><i class="glyphicon glyphicon-user"></i> Người Dùng</span></a>
                             {{--  <ul class="nav nav-second-level">
                                 <li>
                                     <a href="blank.html">Xem Tất Cả</a>

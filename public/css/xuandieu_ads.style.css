@@ -1,0 +1,189 @@
+        /* Add a gray background color and some padding to the footer */
+        .carousel-inner img {
+            width: 100%;
+            /* Set width to 100% */
+            min-height: 200px;
+        }
+        /* Hide the carousel text when the screen is less than 600 pixels wide */
+
+        @media (max-width: 600px) {
+            .carousel-caption {
+                display: none;
+            }
+        }
+        /*tab hang noi bat */
+        /* Style the tab */
+
+        div.tab {
+            overflow: hidden;
+            border: 1px solid #ccc;
+            /* background-color: brown; */
+        }
+        /* Style the buttons inside the tab */
+
+        div.tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            color: whitesmoke;
+        }
+        /* Change background color of buttons on hover */
+
+        div.tab button:hover {
+            background-color: #ddd;
+        }
+        /* Create an active/current tablink class */
+
+        div.tab button.active {
+            background-color: #ccc;
+        }
+        /* Style the tab content */
+
+        .tabsalecontent {
+            display: none;
+            padding: 6px 12px;
+            margin-left: 5px;
+            border: none;
+            border-top: none;
+        }
+        .tabsalecontent>.row>.media>a{
+            text-decoration: none;
+            color: rgb(85, 85, 85);
+        }
+
+        .tabsalecontent>.row>.media>a:hover{
+            text-decoration: none;
+            color: teal;
+        }
+        /* Change background color of buttons on hover */
+
+        div.tab button:hover {
+            background-color: orangered;
+        }
+        /* Create an active/current tablink class */
+
+        div.tab button.active {
+            background-color: orangered;
+        }
+        /* Style the tab content */
+
+        .tabcontent {
+            display: none;
+            padding: 6px 12px;
+            border: 1px solid #ccc;
+            border-top: none;
+        }
+        /* hover dropdown menu */
+
+        body {
+            margin: 0px 0px;
+        }
+
+        .navbar-default {
+            background-color:teal;
+            background-image: none;
+            background-repeat: no-repeat;
+            color: whitesmoke;
+            font-weight: bold;
+            border: 0px;
+            }
+
+        li.dropdown:hover>.dropdown-menu {
+            display: block;
+            background-color:teal;
+            color: whitesmoke;
+            text-transform: uppercase;
+        }
+
+        .navbar-default .navbar-brand,
+        .navbar-default .navbar-nav>li>a,
+        .navbar-default .navbar-nav>li.dropdown>a{
+            color: whitesmoke;
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+
+        .navbar-default .navbar-nav>li.dropdown:hover>a,
+        .navbar-default .navbar-nav>li.dropdown:hover>a:hover,
+        .navbar-default .navbar-nav>li.dropdown:hover>a:focus {
+            background-color: rgb(231, 231, 231);
+            color: rgb(85, 85, 85);
+            
+        }
+
+        .navbar-default .navbar-nav>li.dropdown >.dropdown-menu>li>a{
+            font-weight: bold;
+            color: whitesmoke;
+        }
+
+        .navbar-default .navbar-nav>li.dropdown >.dropdown-menu>li>a:hover,
+        .navbar-default .navbar-nav>li.dropdown >.dropdown-menu>li>a:focus{
+           color: rgb(85, 85, 85);
+        }
+        /* Edit tab-sale Hot and Online Sale  */
+        .panel{
+            border: 0px;
+        }
+        .panel-danger > .panel-heading-interesting{
+            color: whitesmoke;
+        }
+
+        .panel-danger > .panel-heading-interesting,
+        .tab-sale{
+            background-color: teal;
+        }
+        .panel-main-discount{
+            border: 1px solid;
+            border-color: teal;
+        }
+        .panel>.panel-discount{
+            
+           background-color:  teal;
+        }
+        .news>.news-content>.news-content-title,
+        .voucher-title >p>a{
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+            color: rgb(85, 85, 85);
+        }
+        .news>.news-content>.news-content-title:hover,
+        .voucher-title >p>a:hover{
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+            color: teal;
+        }
+
+        .voucher-date>span, .voucher-content>p>span{
+            font-size: 18px;
+            color: teal; 
+        }
+
+        .interesting-ads{
+            margin: 15px;
+        }
+        .interesting-ads>.row>.media>a{
+            text-decoration: none;
+            color: rgb(85, 85, 85);
+        }
+        .interesting-ads>.row>.media>a:hover{
+            text-decoration: none;
+            color: teal;
+        }
+        /* carousel and hot ads */
+
+        .carousel_hot_news>.row>.media>a,
+        .carousel_slide>.carousel>.carousel-inner>.item>.carousel-caption>a{
+            color: rgb(85, 85, 85);
+            text-decoration: none;
+        }
+        .carousel_hot_news>.row>.media>a:hover,
+        .carousel_slide>.carousel>.carousel-inner>.item>.carousel-caption>a:hover{
+            color: teal;
+            text-decoration: none;
+        }

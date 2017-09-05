@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\User;
@@ -18,19 +18,14 @@ class UserController extends Controller
         $user = new User;
         $this->validate($request,
         [
-            'fname'=>'required|min:3|max:100',
-            'lname'=>'required|min:3|max:100',
+            'name'=>'required|min:3|max:100',
             'email'=>'required|unique:users,email|min:5|max:100',
             'password'=>'re quired|min:8|max:45'
         ],
         [
-            'fname.required'=>'Chưa nhập tên người dùng.',
-            'fname.min'=>'Tên người dùng có độ dài từ 3 đến 100 kí tự.',
-            'fname.max'=>'Tên người dùng có độ dài từ 3 đến 100 kí tự.',
-
-            'lname.required'=>'Chưa nhập họ người dùng.',
-            'lname.min'=>'Họ người dùng có độ dài từ 3 đến 100 kí tự.',
-            'lname.max'=>'Họ người dùng có độ dài từ 3 đến 100 kí tự.',
+            'name.required'=>'Chưa nhập tên người dùng.',
+            'name.min'=>'Tên người dùng có độ dài từ 3 đến 100 kí tự.',
+            'name.max'=>'Tên người dùng có độ dài từ 3 đến 100 kí tự.',
 
             'email.required'=>'Chưa nhập email người dùng.',
             'email.unique'=>'Email đã tồn tại. Hãy chọn email khác.',
@@ -41,8 +36,8 @@ class UserController extends Controller
             'password.min'=>'Password có độ dài từ 8 đến 45 kí tự.',
             'password.max'=>'Password có độ dài từ 8 đến 45 kí tự.'
         ]);
-        $user->fname = $request->fname;
-        $user->lname = $request->lname;
+        $user->name = $request->name;
+        $user->level = $request->level;
         $user->email = $request->email;
         $user->password = bcrypt($request->password);
         $user->created_at =  date("Y-m-d");
@@ -73,14 +68,18 @@ class UserController extends Controller
     }
     //check login user
     public function loginAdmin(Request $request) {
-        // $this->validate($request);
         if(Auth::attempt(['email' => $request->email, 'password' => $request->password]))
         {
-            return redirect('admin/dashboard');
-        }else{
-            return redirect('admin/login')->with('notification','Dang nhap that bai. Kiem tra email va password');
+           return redirect('admin/dashboard');
+           echo Auth::check();
+        }
+        else
+        {
+            return redirect('admin/login')->with('notification','Đăng nhập thất bại. Hãy kiểm tra email và mật khẩu');
         }
     }
-    
-
+    public function logoutAdmin(){         
+        Auth::logout();
+        return redirect('admin/login');
+    }
 }

@@ -15,9 +15,10 @@ Route::get('/', function () {
 
 Route::get('admin/login', 'UserController@getLoginForm');
 Route::post('admin/login', 'UserController@loginAdmin');
+Route::get('admin/logout', 'UserController@logoutAdmin');
 
-//route for main-menu
-Route::group(['prefix'=>'admin'], function(){
+//route for admin management,'middleware'=>'adminLogin'
+Route::group(['prefix'=>'admin', 'middleware'=>'adminlogin'], function(){
     Route::get('dashboard', function(){
         return view('admin.layout.index');
     });
@@ -104,3 +105,6 @@ Route::group(['prefix'=>'admin'], function(){
         Route::get('get-all-user', 'UserController@getAllUser');
     });
 });
+
+//route for user 
+Route::get('home', 'PagesController@getHome');
