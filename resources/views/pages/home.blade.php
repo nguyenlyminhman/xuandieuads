@@ -7,49 +7,23 @@
                 <div id="myCarousel" class="carousel slide" data-ride="carousel">
                     <!-- Indicators -->
                     <ol class="carousel-indicators">
-                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                        <li data-target="#myCarousel" data-slide-to="1"></li>
-                        <li data-target="#myCarousel" data-slide-to="2"></li>
-                        <li data-target="#myCarousel" data-slide-to="3"></li>
+                    <?php $i=0 ?>
+                    @foreach($crs_img as $mimg)
+                            <li data-target="#myCarousel" data-slide-to="{{$i}}" {{ $i==0 ? 'class="active"': '' }}></li>
+                            <?php $i++ ?>
+                    @endforeach
                     </ol>
                     <!-- Wrapper for slides -->
                     <div class="carousel-inner" role="listbox">
-                        <div class="item active">
-                            <img src="https://placehold.it/800x425?text=IMAGE" alt="Image">
-                            <div class="carousel-caption">
-                                <a href="#">
-                                    <h3>Sell $</h3>
-                                    <p>Money Money.</p>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <img src="https://placehold.it/800x425?text=Another Image Maybe" alt="Image">
-                            <div class="carousel-caption">
-                                <a href="#">
-                                    <h3>More Sell $</h3>
-                                    <p>Lorem ipsum...</p>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <img src="https://placehold.it/800x425?text=Another Image Maybe" alt="Image">
-                            <div class="carousel-caption">
-                                <a href="#">
-                                    <h3>More Sell $</h3>
-                                    <p>Lorem ipsum...</p>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <img src="https://placehold.it/800x425?text=Another Image Maybe" alt="Image">
-                            <div class="carousel-caption">
-                                <a href="#">
-                                    <h3>More Sell $</h3>
-                                    <p>Lorem ipsum...</p>
-                                </a>
-                            </div>
-                        </div>
+                        <?php $i=0 ?>
+                        @foreach($crs_img as $carousel)
+                                <div class="{{$i==0 ? 'item active':'item'}}">
+                                    <a target="_blank" href="{{$carousel->link_to}}">
+                                        <img src="upload/image/{{$carousel->img_name}}" alt="Image" height="425px" width="800px">
+                                    </a>
+                                </div>
+                                <?php $i++ ?>
+                        @endforeach
                     </div>
 
                     <!-- Left and right controls -->

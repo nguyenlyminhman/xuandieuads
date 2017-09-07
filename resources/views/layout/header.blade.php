@@ -14,25 +14,17 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-
-                <li class="dropdown">
-                    <a href="adnews.thml" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tin Tức Khuyến Mãi<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="adnews.html">Khuyến mãi Lazada</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="adnews.html">Khuyến mãi Tiki</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="adnews.html">Khuyến mãi Sendo</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="adnews.html">Khuyến mãi MuaChung</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="adnews.html">Khuyến mãi Adayroi</a></li>
-                        <li role="separator" class="divider"></li>
-                    </ul>
-                </li>
-                <li><a href="#">Hot Trong Ngày</a></li>
-                <!-- <li class="active"><a href="#">Hot Trong Ngày<span class="sr-only">(current)</span></a></li> -->
-                <li><a href="#">Mua Online</a></li>
+                @foreach($mmenu as $mnu)
+                        <li class={{ count($mnu->subCategory)>0 ? 'dropdown' : ''}}>
+                            <a href="adnews.thml" class="dropdown-toggle" data-toggle="dropdown" role="button">{{$mnu->main_cate_name}}</span></a>
+                            <ul class="dropdown-menu">
+                            @foreach($mnu->subCategory as $snu)    
+                                <li><a href="adnews.html">{{$snu->sub_cate_name}}</a></li>
+                                <li role="separator" class="divider"></li>
+                            @endforeach
+                            </ul>
+                        </li>
+                @endforeach
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <form class="navbar-form navbar-right" role="search">
