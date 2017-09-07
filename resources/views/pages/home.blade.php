@@ -1,4 +1,7 @@
 @extends('layout.index')
+@section('title')
+{{$title}}
+@endsection
 @section('content')
 <!--begin-carousel-->
     <div class="container">
