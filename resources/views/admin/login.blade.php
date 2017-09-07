@@ -44,11 +44,7 @@
 					<label for="inputPassword" class="sr-only"></label>
 					<input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
 				</div>
-                <div class="form-group">
-                    <label class="radio-inline"><input value="admin" type="radio" name="level" checked>Admin</label>
-                    <label class="radio-inline"><input value="1" type="radio" name="level" >Thường</label>
-                </div>
-					<button class="btn btn-lg btn-primary btn-block" type="submit">Sign In</button>
+				<button class="btn btn-lg btn-primary btn-block" type="submit">Sign In</button>
 			</form>
 		</div>
 	</div>

@@ -25,14 +25,13 @@
             <div class="clearfix"> </div>
             <div class="panel-body">
                 <div class="position-center col-lg-6">
-                    <form action="admin/user/editinfo/{{$user->id}}" method="POST">
+                    <form action="admin/user/update-info/{{$user->id}}" method="POST">
                         <input type="hidden" name="_token" value="{{csrf_token()}}" />
                         <div class="form-group">
-                            <label for="email">Tên Menu: </label>
-                            <input type="text" class="form-control" name="img_cate_name" value="{{$cimage->name}}" />
+                            <label for="email">Tên Hiển Thị: </label>
+                            <input type="text" class="form-control" name="name" value="{{Auth::user()->name}}" />
                         </div>
                         <button type="submit" class="btn btn-default">Cập Nhật</button>
-                        <a href="admin/categoryimg/get-all-category-image" type="submit" class="btn btn-default">Quay Lại</a>
                     </form>
                 </div>
             </div>

@@ -12,14 +12,14 @@
 <!-- navbar-top-links -->
 <ul class="nav navbar-top-links navbar-right"> Hello, {{ Auth::user()->name }}
     <!-- /.dropdown -->
-    <li class="dropdown"> }
+    <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
             <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i> 
         </a>
         <ul class="dropdown-menu dropdown-user"> 
-            <li><a href="admin/user/update-info"><i class="fa fa-user fa-fw"></i>Cập Nhật Thông Tin</a>
+            <li><a href="admin/user/update-info/{{Auth::user()->id}}"><i class="fa fa-user fa-fw"></i>Cập Nhật Thông Tin</a>
             </li>
-            <li><a href="admin/user/update-pass"><i class="fa fa-gear fa-fw"></i>Đổi Mật Khẩu</a>
+            <li><a href="admin/user/update-pass/{{Auth::user()->id}}"><i class="glyphicon glyphicon-asterisk"></i>Đổi Mật Khẩu</a>
             </li>
             <li class="divider"></li>
             <li><a href="admin/logout"><i class="fa fa-sign-out fa-fw"></i> Thoát </a>

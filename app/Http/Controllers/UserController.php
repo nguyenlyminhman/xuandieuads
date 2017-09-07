@@ -45,18 +45,51 @@ class UserController extends Controller
         $user->save();
         return redirect('admin/user/get-all-user')->with('notification','Thêm người dùng thành công !!!');
     }
-    //
-    public function editUser ($id){
+    //get user name form
+    public function getUserInfo ($id){
         $user = User::find($id);
-        return view('admin.user.edit', ['user'=>$user]);     
+        return view('admin.user.editinfo', ['user'=>$user]);     
     }
-    //not yet
+    // update user name
     public function updateUserInfo (Request $request, $id){
+        $user = User::find($id);
+        $this->validate($request,
+        [
+            'name'=>'required|min:3|max:100',
+        ],
+        [   
+            'name.required'=>'Chưa nhập tên chính.',
+            'name.min'=>'Tên có độ dài từ 3 đến 100 kí tự.',
+            'name.max'=>'Tên có độ dài từ 3 đến 100 kí tự.'
+        ]);
+        $user->name = $request->name;
+        $user->updated_at =  date("Y-m-d");
+        $user->save();
+        return redirect('admin/user/update-info/'.$id)->with('notification','Đã cập nhật thành công.');
     }
-    //not yet
+    //get user name form
+    public function getUserPass ($id){
+        $user = User::find($id);
+        return view('admin.user.editpass', ['user'=>$user]);     
+    }
+    // update user name
     public function updateUserPass (Request $request, $id){
+        $user = User::find($id);
+        $this->validate($request,
+        [
+            'password'=>'re quired|min:8|max:45'
+        ],
+        [   
+            'password.required'=>'Chưa nhập password.',
+            'password.min'=>'Password có độ dài từ 8 đến 45 kí tự.',
+            'password.max'=>'Password có độ dài từ 8 đến 45 kí tự.'
+        ]);
+        $user->password = bcrypt($request->password);
+        $user->updated_at =  date("Y-m-d");
+        $user->save();
+        return redirect('admin/user/update-pass/'.$id)->with('notification','Đã cập nhật thành công.');
     }
-    //not yet
+    // delete user
     public function deleteUser($id){
         $user = User::find($id);
         $user->delete();

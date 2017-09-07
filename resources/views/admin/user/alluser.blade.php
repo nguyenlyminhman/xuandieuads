@@ -80,11 +80,11 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Tên</th>
-                                <th>Quyền</th>
+                                <th>Quyền Truy Cập</th>
                                 <th>Email</th>
                                 <th>Ngày Tạo</th>
                                 <th>Lần Cập Nhật Cuối</th>
-                                <th>Lựa Chọn</th>
+                                
                             </tr>
                         </thead>
                         <tbody>
@@ -96,13 +96,12 @@
                                 <td>{{$ur->email}}</td>
                                 <td>{{date("d/m/Y", strtotime($ur->created_at))}}</td>
                                 <td>{{date("d/m/Y", strtotime($ur->updated_at))}}</td>
-                                <td>
-                                    <a href="admin/user/edit/{{$ur->id}}" type="button" class="btn btn-warning">Sửa</a>
-                                    <a  href="admin/user/delete/{{$ur->id}}" type="button" class="btn btn-danger" 
+                                 {{--<td>
+                                     <a href="admin/user/delete/{{$ur->id}}" type="button" class="btn btn-danger" 
                                         onclick='return confirm("Lưu Ý: Sau khi xóa dữ liệu liên quan cũng sẽ mất.\n           Có chắc muốn xóa dòng này?");'>
                                         Xóa
-                                    </a>
-                                </td>
+                                    </a>  
+                                </td>--}}
                             </tr>
                             @endforeach
                         </tbody>

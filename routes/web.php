@@ -98,8 +98,11 @@ Route::group(['prefix'=>'admin', 'middleware'=>'adminlogin'], function(){
     Route::group(['prefix'=>'user'], function(){
         Route::get('delete/{id}', 'UserController@deleteUser');
 
-        Route::get('edit/{id}', 'UserController@editUser');
-        Route::post('edit/{id}', 'UserController@updateUser');
+        Route::get('update-info/{id}', 'UserController@getUserInfo');
+        Route::post('update-info/{id}', 'UserController@updateUserInfo');
+
+        Route::get('update-pass/{id}', 'UserController@getUserPass');
+        Route::post('update-pass/{id}', 'UserController@updateUserPass');
 
         Route::post('get-all-user', 'UserController@postUser');
         Route::get('get-all-user', 'UserController@getAllUser');
