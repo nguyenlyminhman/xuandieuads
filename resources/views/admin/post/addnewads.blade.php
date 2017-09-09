@@ -56,9 +56,14 @@
                             <textarea type="text" row="8" class="form-control ckeditor" name="full_content" placeholder="Nội dung đầy đủ"></textarea>
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Tin Nổi Bật:</label> <br>
-                            <label class="radio-inline"><input value="1" type="radio" name="hlight" >Có</label>
-                            <label class="radio-inline"><input value="0" type="radio" name="hlight" checked>Không</label>
+                            <label for="exampleInputPassword1">Tin Nổi Bật:</label>  &nbsp;&nbsp;&nbsp;&nbsp; 
+                            <label class="radio-inline"><input value="0" type="radio" name="hlight" >Có</label>
+                            <label class="radio-inline"><input value="1" type="radio" name="hlight" checked>Không</label>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Xuất Hiện Mua Online:</label>  &nbsp;&nbsp;&nbsp;&nbsp;
+                            <label class="radio-inline"><input value="0" type="radio" name="online" >Có</label>
+                            <label class="radio-inline"><input value="1" type="radio" name="online" checked>Không</label>
                         </div>
                         <div class="form-group">
                             <label for="exampleInputFile">Hình Bài Viết:</label>
@@ -68,7 +73,7 @@
                         <div class="form-group">
                             <button type="submit" class="btn btn-default">Thêm</button>
                             <button type="reset" class="btn btn-default">Đặt Lại</button>
-                        </form>
+                        </div>
                     </form>
                 </div>
             </div>

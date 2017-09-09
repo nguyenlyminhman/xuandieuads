@@ -16,9 +16,10 @@
                             <th>ID</th>
                             <th>Tiêu Đề</th>
                             <th>Tóm Tắt</th>
+                            <th>Hình</th>
                             <th>Mục Chính</th>
                             <th>Mục Phụ</th>
-                            <th>Lượt Xem</th>
+                            <th>Online</th>
                             <th>Nổi Bật</th>
                             <th>Tùy Chọn</th>  
                         </tr>
@@ -29,11 +30,19 @@
                                 <td>{{$pt->id}}</td>
                                 <td>{{$pt->title}}</td>
                                 <td><p>{{$pt->short_content}}</p></td>
+                                <td>
+                                    @if($pt->subCategory->mainCategory->id == 1 )
+                                        <img src="upload/image/{{$pt->image}}" class="img-rounded" width="100px" height="75px" />
+                                    @else
+                                        Mã Giảm Giá Không Có Chứa Hình Ảnh
+                                    @endif
+                                </td>
                                 <td>{{$pt->subCategory->mainCategory->main_cate_name}}</td>
                                 <td>{{$pt->subCategory->sub_cate_name}}</td>
-                                <td>{{$pt->click_counter}}</td>
+                                <td>{{$pt->online == 0 ? 'Có' : 'Không'}}</td>
                                 <td>{{$pt->high_light == 0 ? "Có" : "Không"}}</td>
                                 <td>
+                                {{--  <a href="admin/post/edit/[{{$pt->subCategory->mainCategory->id}}, {{$pt->id}}]" type="button" class="btn btn-warning">Sửa</a><br><br>  --}}
                                     <a href="admin/post/edit/{{$pt->id}}" type="button" class="btn btn-warning">Sửa</a><br><br>
                                     @if($pt->main_cate_status== 0)
                                         <a  href="admin/post/delete/{{$pt->id}}" type="button" class="btn btn-danger" 

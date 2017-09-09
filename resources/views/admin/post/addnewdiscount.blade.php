@@ -61,7 +61,6 @@
                         <div class="form-group">
                             <label for="exampleInputPassword1">Thời Hạn:</label>
                             <input type="text" class="form-control" id='example1' name="expired_date" placeholder="yyyy-mm-dd">
-                            
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Nội Dung Tóm Tắt:</label>
@@ -76,7 +75,7 @@
                         <div class="form-group">
                             <button type="submit" class="btn btn-default">Thêm</button>
                             <button type="reset" class="btn btn-default">Đặt Lại</button>
-                        </form>
+                        </div>
                     </form>
                 </div>
             </div>

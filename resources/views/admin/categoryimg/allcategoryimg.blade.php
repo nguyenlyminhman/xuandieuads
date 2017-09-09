@@ -76,10 +76,10 @@
                                 <td>{{date("d/m/Y", strtotime($image->updated_at))}}</td>
                                 <td>
                                     <a href="admin/categoryimg/edit/{{$image->id}}" type="button" class="btn btn-warning">Sửa</a>
-                                    <a  href="admin/categoryimg/delete/{{$image->id}}" type="button" class="btn btn-danger" 
+                                    {{--  <a  href="admin/categoryimg/delete/{{$image->id}}" type="button" class="btn btn-danger" 
                                         onclick='return confirm("Lưu Ý: Sau khi xóa dữ liệu liên quan cũng sẽ mất.\n           Có chắc muốn xóa dòng này?");'>
                                         Xóa
-                                    </a>
+                                    </a>  --}}
                                 </td>
                             </tr>
                             @endforeach

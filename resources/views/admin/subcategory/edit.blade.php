@@ -28,7 +28,6 @@
                         <div class="form-group">
                             <label for="exampleInputEmail1">Menu chính</label>
                             <select name="idmaincategory"  class="form-control selectpicker" required>
-                                
                                 @foreach($mainMenu as $mmenu)
                                     <option 
                                     @if( $subMenu->fk_idMainCategory == $mmenu->id)

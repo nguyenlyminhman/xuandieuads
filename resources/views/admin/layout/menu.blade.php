@@ -48,6 +48,12 @@
                                     <a href="admin/post/get-all-post">Xem Tất Cả Bài Viết </a>
                                 </li>
                                 <li>
+                                    <a href="admin/post/add-new-discount-code">Thêm Mã Giảm Giá</a>
+                                </li>
+                                <li>
+                                    <a href="admin/post/add-new-ads">Đăng Tin Khuyến Mãi</a>
+                                </li>
+                                {{--  <li>
                                     <a href="#">Mã Giảm Giá<span class="fa arrow"></span></a>
                                     <ul class="nav nav-third-level">
                                         <li>
@@ -70,7 +76,7 @@
                                         </li>
                                     </ul>
                                     <!-- /.nav-third-level -->
-                                </li>
+                                </li>  --}}
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>

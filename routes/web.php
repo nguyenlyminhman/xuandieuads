@@ -73,15 +73,13 @@ Route::group(['prefix'=>'admin', 'middleware'=>'adminlogin'], function(){
      //route for post
      Route::group(['prefix'=>'post'], function(){
         //editing discount post information  
-        Route::get('edit/{id}', 'PostController@updatePost');
-        Route::get('edit/{id}', 'PostController@editPost');
+        Route::get('edit/{id}', 'PostController@getEditPostForm');
+        Route::post('edit-ads/{id}', 'PostController@updateAds');
+        Route::post('edit-discount/{id}', 'PostController@updateDiscount');
         //deleting discount post information
         Route::get('delete/{id}', 'PostController@deletePost');
         //get all post
         Route::get('get-all-post', 'PostController@getPostList');
-        Route::get('get-all-ads', 'PostController@getAdsList');
-        Route::get('get-all-discount', 'PostController@getDiscountList');
-
         //adding new discount code
         Route::get('add-new-discount-code', 'PostController@getDiscountForm');
         Route::post('add-new-discount-code', 'PostController@addToDiscountList');
