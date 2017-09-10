@@ -44,32 +44,32 @@
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Tiêu Đề:</label>
-                            <input type="text" class="form-control" name="title" placeholder="Tiêu đề" required>
+                            <input type="text" class="form-control" name="title" value="{{ old('title') }}" placeholder="Tiêu đề" required>
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Link-Liên Kết:</label>
-                            <input type="text" class="form-control" name="link_to" placeholder="link-liên kết" required>
+                            <input type="text" class="form-control" name="link_to" value="{{ old('link_to') }}" placeholder="link-liên kết" required>
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Số Lượng Giảm Giá:</label>
-                            <input type="text" class="form-control" name="discount" placeholder="Giảm giá">
+                            <input type="text" class="form-control" name="discount" value="{{ old('discount') }}" placeholder="Giảm giá">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Mã Giảm Giá:</label>
-                            <input type="text" class="form-control" name="discount_code" placeholder="Mã giảm giá">
+                            <input type="text" class="form-control" name="discount_code" value="{{ old('discount_code') }}" placeholder="Mã giảm giá">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Thời Hạn:</label>
-                            <input type="text" class="form-control" id='example1' name="expired_date" placeholder="yyyy-mm-dd">
+                            <input type="text" class="form-control" id='example1' name="expired_date" value="{{ old('expired_date') }}" placeholder="yyyy-mm-dd">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Nội Dung Tóm Tắt:</label>
-                            <textarea type="text" row="9" name="short_content" class="form-control" placeholder="Nội dung tóm tắt" required></textarea>
+                            <textarea type="text" row="9" name="short_content" class="form-control" placeholder="Nội dung tóm tắt" required>{{ old('short_content') }}</textarea>
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Tin Nổi Bật:</label> <br>
-                            <label class="radio-inline"><input value="1" type="radio" name="hlight" >Có</label>
-                            <label class="radio-inline"><input value="0" type="radio" name="hlight" checked>Không</label>
+                            <label class="radio-inline"><input value="0" type="radio" name="hlight" >Có</label>
+                            <label class="radio-inline"><input value="1" type="radio" name="hlight" checked>Không</label>
                         </div>
                         <br> <br>
                         <div class="form-group">

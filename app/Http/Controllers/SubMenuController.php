@@ -42,7 +42,7 @@ class SubMenuController extends Controller
         $subMenu = SubCategory::find($id);
         return view('admin.subcategory.edit', ['subMenu'=>$subMenu, 'mainMenu'=>$mainMenu]);        
     }
-    //
+    //update submenu
     public function updateSubMenu (Request $request, $id){
         $subMenu = SubCategory::find($id);
         $this->validate($request,
@@ -62,8 +62,7 @@ class SubMenuController extends Controller
         $subMenu->save();
         return redirect('admin/sub-menu/edit/'.$id)->with('notification','Đã cập nhật thành công.');
     }
-    
-    //
+    //delete submenu
     public function deleteSubMenu($id){
         $subMenu = SubCategory::find($id);
         $subMenu->delete();

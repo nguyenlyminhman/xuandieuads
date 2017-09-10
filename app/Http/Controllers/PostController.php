@@ -183,4 +183,10 @@ class PostController extends Controller
         $post->save();
         return redirect("admin/post/edit/".$id)->with('notification','Đã thêm thành công');
     }
+    //delete post
+    public function deletePost($id){
+        $post = Post::find($id);
+        $post->delete();
+        return redirect('admin/post/get-all-post')->with('notification','Đã xóa thành công !!!');
+    }
 }

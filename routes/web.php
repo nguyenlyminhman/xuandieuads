@@ -71,7 +71,7 @@ Route::group(['prefix'=>'admin', 'middleware'=>'adminlogin'], function(){
         Route::get('get-all-image', 'ImageController@getAllImage');
     });
      //route for post
-     Route::group(['prefix'=>'post'], function(){
+    Route::group(['prefix'=>'post'], function(){
         //editing discount post information  
         Route::get('edit/{id}', 'PostController@getEditPostForm');
         Route::post('edit-ads/{id}', 'PostController@updateAds');

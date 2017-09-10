@@ -43,17 +43,22 @@
                                 @endforeach  --}}
                             </select>
                         </div>
+
+
+
+
+
                         <div class="form-group">
                             <label for="exampleInputEmail1">Tiêu Đề:</label>
-                            <input type="text" class="form-control" name="title" placeholder="Tiêu đề" required>
+                            <input type="text" class="form-control" name="title" value="{{ old('title') }}" placeholder="Tiêu đề" required>
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Nội Dung Tóm Tắt:</label>
-                            <textarea type="text" row="9" name="short_content" class="form-control" placeholder="Nội dung tóm tắt" required></textarea>
+                            <textarea type="text" row="9" name="short_content" class="form-control" placeholder="Nội dung tóm tắt" required>{{ old('short_content') }}</textarea>
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Nội Dung Đầy Đủ:</label>
-                            <textarea type="text" row="8" class="form-control ckeditor" name="full_content" placeholder="Nội dung đầy đủ"></textarea>
+                            <textarea type="text" row="8" class="form-control ckeditor" name="full_content" placeholder="Nội dung đầy đủ">{{ old('full_content') }}</textarea>
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Tin Nổi Bật:</label>  &nbsp;&nbsp;&nbsp;&nbsp; 
