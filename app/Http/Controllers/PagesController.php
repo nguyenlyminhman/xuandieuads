@@ -5,16 +5,19 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\MainCategory;
 use App\Image;
+use App\Post;
 
 class PagesController extends Controller
 {
     function __construct(){
 
         $mmenu = MainCategory::all();
-        $crs_img = Image::where('fk_idCategoryImg', '=', 1)->get();
+        $image = Image::all();
         
+        $hot = Post::all()->sortByDesc('id');
         view()->share('mmenu', $mmenu);
-        view()->share('crs_img', $crs_img);
+        view()->share('image', $image);
+        view()->share('hot', $hot);
     }
     //
     public function getHome(){

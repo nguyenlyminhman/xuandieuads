@@ -11,30 +11,34 @@
                     <!-- Indicators -->
                     <ol class="carousel-indicators">
                     <?php $i=0 ?>
-                    @foreach($crs_img as $mimg)
+                    @foreach($image as $mimg)
+                        @if($mimg->categoryImage->id == 1)
                             <li data-target="#myCarousel" data-slide-to="{{$i}}" {{ $i==0 ? 'class="active"': '' }}></li>
                             <?php $i++ ?>
+                        @endif
                     @endforeach
                     </ol>
                     <!-- Wrapper for slides -->
                     <div class="carousel-inner" role="listbox">
                         <?php $i=0 ?>
-                        @foreach($crs_img as $carousel)
+                        @foreach($image as $carousel)
+                            @if($carousel->categoryImage->id == 1)
                                 <div class="{{$i==0 ? 'item active':'item'}}">
                                     <a target="_blank" href="{{$carousel->link_to}}">
                                         <img src="upload/image/{{$carousel->img_name}}" alt="Image" height="425px" width="800px">
                                     </a>
                                 </div>
                                 <?php $i++ ?>
+                            @endif
                         @endforeach
                     </div>
 
                     <!-- Left and right controls -->
-                    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="next">
                         <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
                         <span class="sr-only">Previous</span>
                     </a>
-                    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="prev">
                         <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
                         <span class="sr-only">Next</span>
                     </a>
@@ -42,78 +46,28 @@
             </div>
             <!-- HOT TRONG NGAY -->
             <div class="col-sm-4 carousel_hot_news">
-                <div class="row">
-                    <div class="media">
-                        <a href="">
-                            <div class="media-left media-top">
-                                <img src="https://placehold.it/150x100?text=IMAGE" class="media-object" style="width:90px">
-                            </div>
-                            <div class="media-body">
-                                <h4 class="media-heading">Tin HOT Trong Ngày Tin HOT Trong Ngày Tin HOT Trong Ngày Tin HOT Trong Ngày Tin</h4>
-                            </div>
-                        </a>
+            <?php $i = 0?>
+            @foreach($hot as $ht)
+                @if($ht->subCategory->mainCategory->id == 1)
+                    <div class="row">
+                        <div class="media">
+                            <a href="">
+                                <div class="media-left media-top">
+                                    <img src="upload/image/{{$ht->image}}" class="media-object" height="75px" width="100px">
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading">{{$ht->title}}</h4>
+                                </div>
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="media">
-                        <a href="">
-                            <div class="media-left media-top">
-                                <img src="https://placehold.it/150x100?text=IMAGE" class="media-object" style="width: 90px">
-                            </div>
-                            <div class="media-body">
-                                <h4 class="media-heading">Tin HOT Trong Ngày Tin HOT Trong Ngày Tin HOT Trong Ngày Tin HOT Trong Ngày Tin</h4>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="media">
-                        <a href="">
-                            <div class="media-left media-top">
-                                <img src="https://placehold.it/150x100?text=IMAGE" class="media-object" style="width:90px">
-                            </div>
-                            <div class="media-body">
-                                <h4 class="media-heading">Tin HOT Trong Ngày Tin HOT Trong Ngày Tin HOT Trong Ngày Tin HOT Trong Ngày Tin</h4>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="media">
-                        <a href="">
-                            <div class="media-left media-top">
-                                <img src="https://placehold.it/150x100?text=IMAGE" class="media-object" style="width:90px">
-                            </div>
-                            <div class="media-body">
-                                <h4 class="media-heading">Tin HOT Trong Ngày Tin HOT Trong Ngày Tin HOT Trong Ngày Tin HOT Trong Ngày Tin</h4>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="media">
-                        <a href="">
-                            <div class="media-left media-top">
-                                <img src="https://placehold.it/150x100?text=IMAGE" class="media-object" style="width:90px">
-                            </div>
-                            <div class="media-body">
-                                <h4 class="media-heading">Tin HOT Trong Ngày Tin HOT Trong Ngày Tin HOT Trong Ngày Tin HOT Trong Ngày Tin</h4>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="media">
-                        <a href="">
-                            <div class="media-left media-top">
-                                <img src="https://placehold.it/150x100?text=IMAGE" class="media-object" style="width:90px">
-                            </div>
-                            <div class="media-body">
-                                <h4 class="media-heading">Tin HOT Trong Ngày Tin HOT Trong Ngày Tin HOT Trong Ngày Tin HOT Trong Ngày Tin</h4>
-                            </div>
-                        </a>
-                    </div>
-                </div>
+                    <?php $i++ ?>
+                @endif
+                
+                @if($i == 5)
+                    <?php break; ?>
+                @endif
+            @endforeach      
             </div>
             <!-- HOT TRONG NGAY -->
         </div>
@@ -121,41 +75,25 @@
     </div>
     <!--end-carousel-->
     <!-- Begin-MyStore -->
-    <div class="container text-center">
-        <h3>Gian Hàng Của Tôi</h3>
+    <div class="container text-center giakhang_container">
+        <h3>Điện Máy Gia Khang Khuyến Mãi</h3>
         <br>
-        <div class="row center">
-            <div class="col-sm-1"></div>
-            <div class="col-sm-2">
-                <a href="#" class="">
-                    <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-                </a>
-            </div>
-            <div class="col-sm-2">
-                <a href="#" class="">
-                    <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-                </a>
-            </div>
-            <div class="col-sm-2">
-                <a href="#" class="">
-                    <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-                </a>
-            </div>
-            <div class="col-sm-2">
-                <a href="#" class="">
-                    <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-                </a>
-            </div>
-            <div class="col-sm-2">
-                <a href="#" class="">
-                    <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-                </a>
-            </div>
-            <div class="col-sm-1"></div>
-            <!-- <div class="col-sm-2">
-                <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-                <p>Partner 6</p>
-            </div> -->
+        <div class="row center giakhang_row">
+            <?php $i = 0?>
+            @foreach($image as $giakhang)
+                @if($giakhang->categoryImage->id == 4)
+                    <div class="col-sm-2 center giakhang_col">
+                        <a target="_blank" href="{{$giakhang->link_to}}">
+                            <img src="upload/image/{{$giakhang->img_name}}" class="img-responsive center-block" height="100px" width="150px" alt="Image">
+                        <p> {{$giakhang->title}}  </p></a>
+                    </div>
+                    <?php $i++ ?>
+                @endif
+                @if($i == 6)
+                    <?php break; ?>
+                @endif
+            @endforeach
+            
         </div>
     </div>
     <br>

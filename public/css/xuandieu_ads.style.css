@@ -151,6 +151,7 @@
             font-weight: bold;
             color: rgb(85, 85, 85);
         }
+        
         .news>.news-content>.news-content-title:hover,
         .voucher-title >p>a:hover{
             text-decoration: none;
@@ -158,7 +159,19 @@
             font-weight: bold;
             color: teal;
         }
-
+        /* font chu gia khang */
+        .giakhang_container >.giakhang_row>.giakhang_col>a{
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: bold;
+            color: rgb(85, 85, 85);
+        }
+        .giakhang_container >.giakhang_row>.giakhang_col>a:hover{
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: bold;
+            color: teal;
+        }      
         .voucher-date>span, .voucher-content>p>span{
             font-size: 18px;
             color: teal; 
@@ -171,6 +184,7 @@
             text-decoration: none;
             color: rgb(85, 85, 85);
         }
+        
         .interesting-ads>.row>.media>a:hover{
             text-decoration: none;
             color: teal;
