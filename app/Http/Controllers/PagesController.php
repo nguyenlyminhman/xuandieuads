@@ -12,8 +12,7 @@ class PagesController extends Controller
     function __construct(){
 
         $mmenu = MainCategory::all();
-        $image = Image::all();
-        
+        $image = Image::all()->sortByDesc('id');
         $hot = Post::all()->sortByDesc('id');
         view()->share('mmenu', $mmenu);
         view()->share('image', $image);

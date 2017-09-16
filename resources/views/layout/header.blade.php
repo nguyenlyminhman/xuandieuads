@@ -15,15 +15,15 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 @foreach($mmenu as $mnu)
-                        <li class={{ count($mnu->subCategory)>0 ? 'dropdown' : ''}}>
-                            <a href="adnews.thml" class="dropdown-toggle" data-toggle="dropdown" role="button">{{$mnu->main_cate_name}}</span></a>
-                            <ul class="dropdown-menu">
+                    <li class={{ count($mnu->subCategory)>0 ? 'dropdown' : ''}}>
+                        <a href="adnews.thml" class="dropdown-toggle" data-toggle="dropdown" role="button">{{$mnu->main_cate_name}}</span></a>
+                        <ul class="dropdown-menu">
                             @foreach($mnu->subCategory as $snu)    
                                 <li><a href="adnews.html">{{$snu->sub_cate_name}}</a></li>
                                 <li role="separator" class="divider"></li>
                             @endforeach
-                            </ul>
-                        </li>
+                        </ul>
+                    </li>
                 @endforeach
             </ul>
             <ul class="nav navbar-nav navbar-right">

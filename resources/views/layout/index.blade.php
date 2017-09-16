@@ -32,6 +32,9 @@
     <!-- begin-navigation -->
     @include('layout.header')
     <!-- end-navigation -->
+    <!--carousel-->
+    @include('layout.carousel')
+    <!--end-carousel-->
     <!--begin-content-->
     @yield('content');
     <!--end-content-->
@@ -48,5 +51,4 @@
     <script src="./js/ie10-viewport-bug-workaround.js"></script>
     @yield('script')
 </body>
-
 </html>
