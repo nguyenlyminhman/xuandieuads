@@ -39,27 +39,23 @@
         </div>
         <!-- HOT TRONG NGAY -->
         <div class="col-sm-4 carousel_hot_news">
-        <?php $i = 0?>
-        @foreach($hot as $ht)
-            @if($ht->subCategory->mainCategory->id == 1)
-                <div class="row">
-                    <div class="media">
-                        <a href="">
-                            <div class="media-left media-top">
-                                <img src="upload/image/{{$ht->image}}" class="media-object" height="75px" width="100px">
-                            </div>
-                            <div class="media-body">
-                                <h4 class="media-heading">{{$ht->title}}</h4>
-                            </div>
-                        </a>
+            @foreach($mmenu as $hot)
+                <?php $data = $hot->post->where('high_light',0)->sortByDesc('created_at')->take(5) ?>
+                 @foreach($data->all() as $ht)
+                    <div class="row">
+                        <div class="media">
+                            <a href="">
+                                <div class="media-left media-top">
+                                    <img src="upload/image/{{$ht->image}}" class="media-object" height="75px" width="100px">
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading">{{$ht->title}}</h4>
+                                </div>
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <?php $i++ ?>
-            @endif
-            @if($i == 5)
-                <?php break; ?>
-            @endif
-        @endforeach      
+                @endforeach        
+            @endforeach 
         </div>
         <!-- HOT TRONG NGAY -->
     </div>

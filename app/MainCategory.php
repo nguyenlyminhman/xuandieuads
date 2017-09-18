@@ -13,11 +13,11 @@ class MainCategory extends Model
         return $this->hasMany('App\SubCategory','fk_idMainCategory', 'id');
     }
     //link through subcategory table
-    public function subCategoryNews(){
+    public function post(){
         return $this->hasManyThrough('App\Post','App\SubCategory','fk_idMainCategory','fk_idSubCategory','id');
     }
-    //link to news table
-    public function post(){
-        return $this-> hasMany('App\Post','fk_idMaincategory','id');
-    }
+    // //link to news table
+    // public function post(){
+    //     return $this-> hasMany('App\Post','fk_idMaincategory','id');
+    // }
 }

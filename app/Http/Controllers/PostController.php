@@ -50,7 +50,7 @@ class PostController extends Controller
         $post->short_content = $request->short_content;
         $post->full_content = "nothing";
         $post->online = "0";
-        $post->high_light = $request->hlight;
+        $post->high_light = "1";
         $post->created_at = date("Y-m-d");
         $post->updated_at = date("Y-m-d");
         $post->expired_at = $request->expired_date;

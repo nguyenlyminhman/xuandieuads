@@ -66,11 +66,11 @@
                             <label for="exampleInputPassword1">Nội Dung Tóm Tắt:</label>
                             <textarea type="text" row="9" name="short_content" class="form-control" placeholder="Nội dung tóm tắt" required>{{ old('short_content') }}</textarea>
                         </div>
-                        <div class="form-group">
+                        {{--  <div class="form-group">
                             <label for="exampleInputPassword1">Tin Nổi Bật:</label> <br>
                             <label class="radio-inline"><input value="0" type="radio" name="hlight" >Có</label>
                             <label class="radio-inline"><input value="1" type="radio" name="hlight" checked>Không</label>
-                        </div>
+                        </div>  --}}
                         <br> <br>
                         <div class="form-group">
                             <button type="submit" class="btn btn-default">Thêm</button>

@@ -2,240 +2,45 @@
             <div class="col-sm-4">
                 <div class="tab tab-sale">
                     <button class="tabsale" onclick="openSale(event, 'Hot')" id="defaultSale"><h4>Khuyến Mãi Hot</h4></button>
-                    <button class="tabsale" onclick="openSale(event, 'Online')"><h4>Mua Online</h4></button>
+                    <button class="tabsale" onclick="openSale(event, 'Online')"><h4>Chuyên Mục</h4></button>
                 </div>
                 <div id="Hot" class="tabsalecontent">
-                    <div class="row">
-                        <div class="media">
-                            <a href="">
-                                <div class="media-left media-top">
-                                    <img src="https://placehold.it/150x100?text=IMAGE" class="media-object" style="width: 90px">
+                    @foreach($mmenu as $hot)
+                        <?php $data = $hot->post->where('high_light',0)->sortByDesc('created_at')->take(10) ?>
+                        @foreach($data->all() as $ht)
+                            <div class="row">
+                                <div class="media">
+                                    <a href="">
+                                        <div class="media-left media-top">
+                                            <img src="upload/image/{{$ht->image}}" class="media-object"  height="75px" width="100px">
+                                        </div>
+                                        <div class="media-body">
+                                            <h4 class="media-heading">{{$ht->title}}</h4>
+                                        </div>
+                                    </a>
                                 </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading">Khuyến Mãi Hot Trong Ngày Khuyến Mãi Hot Trong Ngày Khuyến Mãi Hot Trong Ngày</h4>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="media">
-                            <a href="">
-                                <div class="media-left media-top">
-                                    <img src="https://placehold.it/150x100?text=IMAGE" class="media-object" style="width: 90px">
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading">Khuyến Mãi Hot Trong Ngày Khuyến Mãi Hot Trong Ngày Khuyến Mãi Hot Trong Ngày</h4>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="media">
-                            <a href="">
-                                <div class="media-left media-top">
-                                    <img src="https://placehold.it/150x100?text=IMAGE" class="media-object" style="width: 90px">
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading">Khuyến Mãi Hot Trong Ngày Khuyến Mãi Hot Trong Ngày Khuyến Mãi Hot Trong Ngày</h4>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="media">
-                            <a href="">
-                                <div class="media-left media-top">
-                                    <img src="https://placehold.it/150x100?text=IMAGE" class="media-object" style="width: 90px">
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading">Khuyến Mãi Hot Trong Ngày Khuyến Mãi Hot Trong Ngày Khuyến Mãi Hot Trong Ngày</h4>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="media">
-                            <a href="">
-                                <div class="media-left media-top">
-                                    <img src="https://placehold.it/150x100?text=IMAGE" class="media-object" style="width: 90px">
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading">Khuyến Mãi Hot Trong Ngày Khuyến Mãi Hot Trong Ngày Khuyến Mãi Hot Trong Ngày</h4>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="media">
-                            <a href="">
-                                <div class="media-left media-top">
-                                    <img src="https://placehold.it/150x100?text=IMAGE" class="media-object" style="width: 90px">
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading">Khuyến Mãi Hot Trong Ngày Khuyến Mãi Hot Trong Ngày Khuyến Mãi Hot Trong Ngày</h4>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="media">
-                            <a href="">
-                                <div class="media-left media-top">
-                                    <img src="https://placehold.it/150x100?text=IMAGE" class="media-object" style="width: 90px">
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading">Khuyến Mãi Hot Trong Ngày Khuyến Mãi Hot Trong Ngày Khuyến Mãi Hot Trong Ngày</h4>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="media">
-                            <a href="">
-                                <div class="media-left media-top">
-                                    <img src="https://placehold.it/150x100?text=IMAGE" class="media-object" style="width: 90px">
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading">Khuyến Mãi Hot Trong Ngày Khuyến Mãi Hot Trong Ngày Khuyến Mãi Hot Trong Ngày</h4>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="media">
-                            <a href="">
-                                <div class="media-left media-top">
-                                    <img src="https://placehold.it/150x100?text=IMAGE" class="media-object" style="width: 90px">
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading">Khuyến Mãi Hot Trong Ngày Khuyến Mãi Hot Trong Ngày Khuyến Mãi Hot Trong Ngày</h4>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="media">
-                            <a href="">
-                                <div class="media-left media-top">
-                                    <img src="https://placehold.it/150x100?text=IMAGE" class="media-object" style="width: 90px">
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading">Khuyến Mãi Hot Trong Ngày Khuyến Mãi Hot Trong Ngày Khuyến Mãi Hot Trong Ngày</h4>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
+                            </div>
+                        @endforeach        
+                    @endforeach 
                 </div>
                 <div id="Online" class="tabsalecontent">
+                @foreach($smenu as $smnu)
+                <hr>
                     <div class="row">
                         <div class="media">
                             <a href="">
                                 <div class="media-left media-top">
-                                    <img src="https://placehold.it/150x100?text=IMAGE" class="media-object" style="width: 90px">
+                                    <img src="images/promotion.png" class="media-object">
                                 </div>
                                 <div class="media-body">
-                                    <h4 class="media-heading">Mua Online Trong Ngày Mua Online Trong Ngày Mua Online Trong Ngày</h4>
+                                    <h4 class="media-heading">{{$smnu->sub_cate_name}} </h4>
                                 </div>
                             </a>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="media">
-                            <a href="">
-                                <div class="media-left media-top">
-                                    <img src="https://placehold.it/150x100?text=IMAGE" class="media-object" style="width: 90px">
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading">Mua Online Trong Ngày Mua Online Trong Ngày Mua Online Trong Ngày</h4>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="media">
-                            <a href="">
-                                <div class="media-left media-top">
-                                    <img src="https://placehold.it/150x100?text=IMAGE" class="media-object" style="width: 90px">
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading">Mua Online Trong Ngày Mua Online Trong Ngày Mua Online Trong Ngày</h4>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="media">
-                            <a href="">
-                                <div class="media-left media-top">
-                                    <img src="https://placehold.it/150x100?text=IMAGE" class="media-object" style="width: 90px">
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading">Mua Online Trong Ngày Mua Online Trong Ngày Mua Online Trong Ngày</h4>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="media">
-                            <a href="">
-                                <div class="media-left media-top">
-                                    <img src="https://placehold.it/150x100?text=IMAGE" class="media-object" style="width: 90px">
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading">Mua Online Trong Ngày Mua Online Trong Ngày Mua Online Trong Ngày</h4>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="media">
-                            <a href="">
-                                <div class="media-left media-top">
-                                    <img src="https://placehold.it/150x100?text=IMAGE" class="media-object" style="width: 90px">
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading">Mua Online Trong Ngày Mua Online Trong Ngày Mua Online Trong Ngày</h4>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="media">
-                            <a href="">
-                                <div class="media-left media-top">
-                                    <img src="https://placehold.it/150x100?text=IMAGE" class="media-object" style="width: 90px">
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading">Mua Online Trong Ngày Mua Online Trong Ngày Mua Online Trong Ngày</h4>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="media">
-                            <a href="">
-                                <div class="media-left media-top">
-                                    <img src="https://placehold.it/150x100?text=IMAGE" class="media-object" style="width: 90px">
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading">Mua Online Trong Ngày Mua Online Trong Ngày Mua Online Trong Ngày</h4>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="media">
-                            <a href="">
-                                <div class="media-left media-top">
-                                    <img src="https://placehold.it/150x100?text=IMAGE" class="media-object" style="width: 90px">
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading">Mua Online Trong Ngày Mua Online Trong Ngày Mua Online Trong Ngày</h4>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
+                    
+            @endforeach 
+            <hr>
                 </div>
             </div>
         <!--end-tab-hightlight -->
