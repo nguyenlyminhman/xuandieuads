@@ -17,9 +17,9 @@ class PagesController extends Controller
         $image = Image::all()->sortByDesc('id');
         $hot = Post::all()->sortByDesc('id');
         view()->share('mmenu', $mmenu);
+        view()->share('smenu', $smenu);
         view()->share('image', $image);
         view()->share('hot', $hot);
-        view()->share('smenu', $smenu);
     }
     //
     public function getHome(){

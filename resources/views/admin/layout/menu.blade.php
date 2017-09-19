@@ -6,10 +6,10 @@
                             <div class="input-group custom-search-form">
                                 <input type="text" class="form-control" placeholder="Search...">
                                 <span class="input-group-btn">
-                                <button class="btn btn-default" type="button">
-                                    <i class="fa fa-search"></i>
-                                </button>
-                            </span>
+                                    <button class="btn btn-default" type="button">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </span>
                             </div>
                             <!-- /input-group -->
                         </li>
@@ -23,8 +23,8 @@
                                     <a href="admin/main-menu/get-main-menu-list"><i class="glyphicon glyphicon-th-list"></i> Menu Chính <span class=""></span></a>
                                 </li>
                                 <li>
-                            <a href="admin/sub-menu/get-sub-menu-list"><i class="glyphicon glyphicon-list"></i> Menu Phụ <span class=""></span></a>
-                        </li>
+                                    <a href="admin/sub-menu/get-sub-menu-list"><i class="glyphicon glyphicon-list"></i> Menu Phụ <span class=""></span></a>
+                                </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
