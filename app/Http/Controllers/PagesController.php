@@ -25,4 +25,9 @@ class PagesController extends Controller
     public function getHome(){
         return view('pages.home', ['title'=>'Trang chủ']);
     }
+    public function getMaGiamGia($id){
+        $loaikhuyenmai = SubCategory::find($id);
+        $tinkhuyenmai = Post::where('fk_idSubCategory', $id)->paginate(10);
+        return view('pages.giamgia', ['title'=>'Ma Giam Gia', 'loaikhuyenmai'=> $loaikhuyenmai, 'tinkhuyenmai'=> $tinkhuyenmai]);
+    }
 }

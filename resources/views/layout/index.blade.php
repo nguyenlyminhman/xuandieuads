@@ -15,6 +15,7 @@
     <meta name="author" content="">
     <link rel="icon" href="https://getbootstrap.com/docs/3.3/favicon.ico">
     <title>Xuan Dieu | @yield('title') </title>
+    <base href="{{asset('')}}" >
     <!-- Bootstrap core CSS -->
     <link href="./css/bootstrap.min.css" rel="stylesheet">
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->

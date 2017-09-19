@@ -109,3 +109,4 @@ Route::group(['prefix'=>'admin', 'middleware'=>'adminlogin'], function(){
 
 //route for user 
 Route::get('home', 'PagesController@getHome');
+Route::get('giam-gia/{id}/{sub_cate_seolink}.html', 'PagesController@getMaGiamGia');
