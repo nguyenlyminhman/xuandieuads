@@ -40,7 +40,7 @@
                     <ul style="border: none">
                         @foreach($mmnu->subCategory as $smnu)
                                 <li class="list-group-item" style="border: none"> 
-                                    <a href="{{$mmnu->main_cate_seolink}}/{{$smnu->sub_cate_seolink}}" class="list-group-item" style="text-decoration: none">
+                                    <a href="{{$mmnu->id == 1 ? 'khuyen-mai' : 'giam-gia'}}/{{$smnu->id}}/{{$smnu->sub_cate_seolink}}.html" class="list-group-item" style="text-decoration: none">
                                         <div class="media">
                                             <div class="media-left media-top">
                                                 <img src="images/promotion.png" class="media-object">
@@ -60,31 +60,31 @@
 </div>
 <!--end-tab-hightlight -->
 <!--interesting-ads-->
-    <div class="col-sm-4">
-        <br>
-        <div class="panel panel-danger ">
-            <div class="panel-heading panel-heading-interesting text-center">
-                <h4>Mua Online</h4>
-            </div>
-            @foreach($mmenu as $onl)
-                <?php $data = $onl->post->where('online',0)->sortByDesc('created_at')->take(15) ?>
-                @foreach($data->all() as $online)
-                    <div class="interesting-ads">
-                        <div class="row">
-                            <div class="media">
-                                <a href="">
-                                    <div class="media-left media-top">
-                                        <img src="upload/image/{{$online->image}}" class="media-object" height="75px" width="100px">
-                                    </div>
-                                    <div class="media-body">
-                                        <h4 class="media-heading">{{$online->title}}</h4>
-                                    </div>
-                                </a>
-                            </div>
+<div class="col-sm-4">
+    <br>
+    <div class="panel panel-danger ">
+        <div class="panel-heading panel-heading-interesting text-center">
+            <h4>Mua Online</h4>
+        </div>
+        @foreach($mmenu as $onl)
+            <?php $data = $onl->post->where('online',0)->sortByDesc('created_at')->take(15) ?>
+            @foreach($data->all() as $online)
+                <div class="interesting-ads">
+                    <div class="row">
+                        <div class="media">
+                            <a href="">
+                                <div class="media-left media-top">
+                                    <img src="upload/image/{{$online->image}}" class="media-object" height="75px" width="100px">
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading">{{$online->title}}</h4>
+                                </div>
+                            </a>
                         </div>
                     </div>
-                @endforeach        
-            @endforeach 
-        </div>
+                </div>
+            @endforeach        
+        @endforeach 
     </div>
-<!--end-interesting-ads-->
+</div>
+<!--end-interesting-ads--></div>
