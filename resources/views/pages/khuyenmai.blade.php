@@ -8,7 +8,7 @@
     <div class="row">
         <div class="col-sm-8">
             <div class=" row text-left">
-                <div class="row">
+                <div class="col-sm-12">
                     <h3>{{$loaikhuyenmai->sub_cate_name}}</h3>
                     <h3>
                         <small class="text-muted">{{$loaikhuyenmai->description}}</small>
@@ -26,20 +26,25 @@
                     </div>
                     <div class="col-sm-9">
                         <div class="row voucher-title">
-                            <p> <a >{{$gg->title}}</a></p>
+                            <p> <a href="chi-tiet-khuyen-mai/{{$gg->id}}/{{$gg->title_seolink}}.html">{{$gg->title}}</a></p>
+                        </div>
+                        <div class="row voucher-date"> 
+                            <span class="text-primary text"> 
+                                <span class="glyphicon glyphicon-calendar"></span> 
+                                Thời hạn : {{date("d/m/Y", strtotime($gg->expired_at))}}
+                            </span>
                         </div>
                         <div class="row voucher-content">
-                            <p> {{$gg->short_content}} </p>
+                            <p> <span class="text-primary text"><span class="glyphicon glyphicon-hand-right"></span></span>
+                                {{$gg->short_content}} </p>
                         </div>
                         <div class="row">
-                            <button type="button" class="btn btn-default">
-                                 <span class="glyphicon glyphicon-hand-right"> </span>
-                                    Xem Thêm
-                                 <span class="glyphicon glyphicon-hand-right"> </span>
-                            </button>
+                            <a target="_blank" href="{{$gg->link_to}}" type="button" class="btn btn-default">
+                                <span class="glyphicon glyphicon-hand-right"> </span>
+                                    Xem trang khuyến mãi
+                                <span class="glyphicon glyphicon-hand-right"> </span>
+                            </a>
                         </div> 
-                        <!-- Modal -->
-                        
                     </div>
                 </div>
                 <hr>

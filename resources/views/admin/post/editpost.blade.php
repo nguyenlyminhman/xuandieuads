@@ -24,7 +24,7 @@
                             @endif
                             @if(session('notification'))
                                 <div class="alert alert-success">
-                                        {{session('notification')}} <br>
+                                        {{session('notification')}} <br> <a href="admin/post/get-all-post" class="btn btn-default">Quay Lại</a>
                                 </div>
                             @endif
                 </div>
@@ -91,6 +91,16 @@
                         </div>
                         <br>
                         <div class="form-group">
+                            <label for="email">Ảnh Hiện Tại:</label><br>
+                            <img src="upload/image/{{$post->image}}" class="img-rounded" width="250px" height="175px" />
+                        <br><label for="email">{{$post->image}}</label>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Chọn Ảnh Mới:</label>
+                            <input type="file" id="fileinput" name="imgfile" class="form-control"/>
+                        </div>
+                        <br>
+                        <div class="form-group">
                             <button type="submit" class="btn btn-default">Cập Nhật</button>
                             <button type="reset" class="btn btn-default">Đặt Lại</button>
                             <a href="admin/post/get-all-post" class="btn btn-default">Quay Lại</a>
@@ -121,6 +131,14 @@
                             <label for="exampleInputPassword1">Nội Dung Tóm Tắt:</label>
                             <textarea type="text" row="9" name="short_content" class="form-control" placeholder="Nội dung tóm tắt" required>{{$post->short_content}}</textarea>
                         </div>
+                         <div class="form-group">
+                            <label for="exampleInputPassword1">Link-Liên Kết:</label>
+                            <input type="text" class="form-control" name="link_to" placeholder="link-liên kết" value="{{$post->link_to}}" required>
+                        </div>
+                         <div class="form-group">
+                            <label for="exampleInputPassword1">Thời Hạn:</label>
+                            <input type="text" class="form-control" id='example1' name="expired_date" value="{{date("Y-m-d", strtotime($post->expired_at))}}" placeholder="yyyy-mm-dd">
+                        </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Nội Dung Đầy Đủ:</label>
                             <textarea type="text" row="8" class="form-control ckeditor" name="full_content" placeholder="Nội dung đầy đủ">{{$post->full_content}}</textarea>
@@ -147,14 +165,14 @@
                         </div>
                         <br>
                         <div class="form-group">
-                        <label for="email">Ảnh Hiện Tại:</label><br>
-                        <img src="upload/image/{{$post->image}}" class="img-rounded" width="250px" height="175px" />
+                            <label for="email">Ảnh Hiện Tại:</label><br>
+                            <img src="upload/image/{{$post->image}}" class="img-rounded" width="250px" height="175px" />
                         <br><label for="email">{{$post->image}}</label>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Chọn Ảnh Mới:</label>
-                        <input type="file" id="fileinput" name="imgfile" class="form-control"/>
-                    </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Chọn Ảnh Mới:</label>
+                            <input type="file" id="fileinput" name="imgfile" class="form-control"/>
+                        </div>
                         <br>
                         <div class="form-group">
                             <button type="submit" class="btn btn-default">Thêm</button>

@@ -24,14 +24,25 @@ class PagesController extends Controller
     public function getHome(){
         return view('pages.home', ['title'=>'Trang chủ']);
     }
+
+    function getHot(){
+        //$hot = Post::where('fk_idSubCategory', $id)->latest()->paginate(15);
+        return view('pages.hot', ['title'=>'Hot Trong Ngày', ]);
+    }
+    
     public function getMaGiamGia($id){
         $loaikhuyenmai = SubCategory::find($id);
-        $tinkhuyenmai = Post::where('fk_idSubCategory', $id)->paginate(10);
+        $tinkhuyenmai = Post::where('fk_idSubCategory', $id)->latest()->paginate(15);
         return view('pages.giamgia', ['title'=>'Mã Giảm Giá...', 'loaikhuyenmai'=> $loaikhuyenmai, 'tinkhuyenmai'=> $tinkhuyenmai]);
     }
     public function getKhuyenMai($id){
         $loaikhuyenmai = SubCategory::find($id);
-        $tinkhuyenmai = Post::where('fk_idSubCategory', $id)->paginate(10);
+        $tinkhuyenmai = Post::where('fk_idSubCategory', $id)->latest()->paginate(15);
         return view('pages.khuyenmai', ['title'=>'Tin Khuyễn Mãi...', 'loaikhuyenmai'=> $loaikhuyenmai, 'tinkhuyenmai'=> $tinkhuyenmai]);
+    }
+
+    function getChiTietKhuyenMai($id){
+        $chitietkhuyenmai = Post::find($id);
+        return view('pages.chitiet', ['title'=>'Chi Tiết Khuyễn Mãi...', 'chitietkhuyenmai'=> $chitietkhuyenmai]);
     }
 }

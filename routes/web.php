@@ -109,6 +109,10 @@ Route::group(['prefix'=>'admin', 'middleware'=>'adminlogin'], function(){
 
 //route for user 
 Route::get('home', 'PagesController@getHome');
+Route::get('hot', 'PagesController@getHot');
 
 Route::get('giam-gia/{id}/{sub_cate_seolink}.html', 'PagesController@getMaGiamGia');
 Route::get('khuyen-mai/{id}/{sub_cate_seolink}.html', 'PagesController@getKhuyenMai');
+
+Route::get('chi-tiet-khuyen-mai/{id}/{title_seolink}.html', 'PagesController@getChiTietKhuyenMai');
+

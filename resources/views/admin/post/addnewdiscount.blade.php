@@ -25,7 +25,7 @@
                 <div class="position-center">
                     <form role="form" action="admin/post/add-new-discount-code" method="POST" enctype="multipart/form-data">
                         <input type="hidden" name="_token" value="{{csrf_token()}}" />
-                        <div class="form-group">
+                        {{--  <div class="form-group">
                             <label for="exampleInputEmail1">Chuyên Mục Chính:</label>
                             <select name="maincategory" id="maincategory" class="form-control selectpicker" data-style="btn-primary">
                             <option value="">--Chọn Chuyên Mục Chính--</option>
@@ -33,13 +33,14 @@
                                 <option value="{{$mmenu->id}}">{{$mmenu->main_cate_name}}</option>
                             @endforeach
                             </select>
-                        </div>
+                        </div>  --}}
                         <div class="form-group">
                             <label for="exampleInputEmail1">Chuyên Mục Phụ:</label>
                             <select name="subcategory" id="subcategory" class="form-control selectpicker" required>
-                                {{--  @foreach($submenu as $smenu)
+                                <option value="">--Chọn Chuyên Mục--</option>
+                                @foreach($submenu as $smenu)
                                     <option value="{{$smenu->id}}">{{$smenu->sub_cate_name}}</option>
-                                @endforeach  --}}
+                                @endforeach
                             </select>
                         </div>
                         <div class="form-group">
@@ -47,9 +48,10 @@
                             <input type="text" class="form-control" name="title" value="{{ old('title') }}" placeholder="Tiêu đề" required>
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Link-Liên Kết:</label>
-                            <input type="text" class="form-control" name="link_to" value="{{ old('link_to') }}" placeholder="link-liên kết" required>
+                            <label for="exampleInputPassword1">Nội Dung Tóm Tắt:</label>
+                            <textarea type="text" row="9" name="short_content" class="form-control" placeholder="Nội dung tóm tắt" required>{{ old('short_content') }}</textarea>
                         </div>
+                        
                         <div class="form-group">
                             <label for="exampleInputEmail1">Số Lượng Giảm Giá:</label>
                             <input type="text" class="form-control" name="discount" value="{{ old('discount') }}" placeholder="Giảm giá">
@@ -63,15 +65,19 @@
                             <input type="text" class="form-control" id='example1' name="expired_date" value="{{ old('expired_date') }}" placeholder="yyyy-mm-dd">
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Nội Dung Tóm Tắt:</label>
-                            <textarea type="text" row="9" name="short_content" class="form-control" placeholder="Nội dung tóm tắt" required>{{ old('short_content') }}</textarea>
+                            <label for="exampleInputPassword1">Link-Liên Kết:</label>
+                            <input type="text" class="form-control" name="link_to" value="{{ old('link_to') }}" placeholder="link-liên kết" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputFile">Hình Bài Viết:</label>
+                            <input type="file" name="imgfile" class="form-control">
                         </div>
                         {{--  <div class="form-group">
                             <label for="exampleInputPassword1">Tin Nổi Bật:</label> <br>
                             <label class="radio-inline"><input value="0" type="radio" name="hlight" >Có</label>
                             <label class="radio-inline"><input value="1" type="radio" name="hlight" checked>Không</label>
                         </div>  --}}
-                        <br> <br>
+                        <br>
                         <div class="form-group">
                             <button type="submit" class="btn btn-default">Thêm</button>
                             <button type="reset" class="btn btn-default">Đặt Lại</button>

@@ -8,7 +8,7 @@
     <div class="row">
         <div class="col-sm-8">
             <div class=" row text-left">
-                <div class="row">
+                <div class="col-sm-12">
                     <h3>{{$loaikhuyenmai->sub_cate_name}}</h3>
                     <h3>
                         <small class="text-muted">{{$loaikhuyenmai->description}}</small>

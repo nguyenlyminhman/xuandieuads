@@ -31,11 +31,7 @@
                                 <td>{{$pt->title}}</td>
                                 <td><p>{{$pt->short_content}}</p></td>
                                 <td>
-                                    @if($pt->subCategory->mainCategory->id == 1 )
-                                        <img src="upload/image/{{$pt->image}}" class="img-rounded" width="100px" height="75px" />
-                                    @else
-                                        Mã Giảm Giá Không Có Chứa Hình Ảnh
-                                    @endif
+                                    <img src="upload/image/{{$pt->image}}" class="img-rounded" width="100px" height="75px" />
                                 </td>
                                 <td>{{$pt->subCategory->mainCategory->main_cate_name}}</td>
                                 <td>{{$pt->subCategory->sub_cate_name}}</td>
