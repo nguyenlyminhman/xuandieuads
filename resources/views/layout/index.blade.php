@@ -34,7 +34,9 @@
     @include('layout.header')
     <!-- end-navigation -->
     <!--carousel-->
+    
     @include('layout.carousel')
+  
     <!--end-carousel-->
     <!--begin-content-->
     @yield('content');

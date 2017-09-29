@@ -1,5 +1,4 @@
 <!-- begin-tab-hightlight -->
-    
         <div class="col-sm-4">
             <div class="tab tab-sale">
                 <button class="tabsale" onclick="openSale(event, 'Hot')" id="defaultSale"><h4> Khuyến Mãi Hot &nbsp;</h4></button>
@@ -41,7 +40,7 @@
                         <ul style="border: none">
                             @foreach($mmnu->subCategory as $smnu)
                                     <li class="list-group-item" style="border: none"> 
-                                        <a href="{{$mmnu->id == 1 ? 'khuyen-mai' : 'giam-gia'}}/{{$smnu->id}}/{{$smnu->sub_cate_seolink}}.html" class="list-group-item" style="text-decoration: none">
+                                        <a href="{{$mmnu->id == 1 ? 'tin-khuyen-mai' : 'ma-giam-gia-voucher'}}/{{$smnu->id}}/{{$smnu->sub_cate_seolink}}.html" class="list-group-item" style="text-decoration: none">
                                             <div class="media">
                                                 <div class="media-left media-top">
                                                     <img src="images/promotion.png" class="media-object">
@@ -60,7 +59,6 @@
         </div>
 <!--end-tab-hightlight -->
 <!--interesting-ads-->
-    <div class="col-sm-12">
         <br>
         <div class="panel panel-danger ">
             <div class="panel-heading panel-heading-interesting text-center">
@@ -86,5 +84,4 @@
                 @endforeach        
             @endforeach 
         </div>
-    </div>
 <!--end-interesting-ads-->

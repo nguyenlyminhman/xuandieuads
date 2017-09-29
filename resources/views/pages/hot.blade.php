@@ -7,32 +7,21 @@
 <div class="container ">
     <div class="row">
         <div class="col-sm-8">
-            <div class=" row text-left">
-                <div class="col-sm-12">
-                    <h3>{{$loaikhuyenmai->sub_cate_name}}</h3>
-                    <h3>
-                        <small class="text-muted">{{$loaikhuyenmai->description}}</small>
-                    </h3>
-                    <p></p>
-                </div>
-            </div>
-            <hr>
-            <?php $i = 0 ?>
-            @foreach($tinkhuyenmai as $gg)
-            <?php $i++; ?>
+            @foreach($hotpage as $ht)
                 <div class="row">
                     <div class="col-sm-3">
-                        <img src="upload/image/{{$gg->image}}" height="125px" width="170px">
+                        <img src="upload/image/{{$ht->image}}" height="125px" width="170px">
                     </div>
                     <div class="col-sm-9">
                         <div class="row voucher-title">
-                            <p> <a href="chi-tiet-khuyen-mai/{{$gg->id}}/{{$gg->title_seolink}}.html">{{$gg->title}}</a></p>
+                            <p> <a href="chi-tiet-khuyen-mai/{{$ht->id}}/{{$ht->title_seolink}}.html">{{$ht->title}}</a></p>
                         </div>
                         <div class="row voucher-content">
-                            <p> {{$gg->short_content}} </p>
+                        <p> <span class="text-primary text"><span class="glyphicon glyphicon-hand-right"></span></span>
+                             {{$ht->short_content}} </p>
                         </div>
                         <div class="row">
-                            <a target="_blank" href="{{$gg->link_to}}" type="button" class="btn btn-default">
+                            <a target="_blank" href="{{$ht->link_to}}" type="button" class="btn btn-default">
                                 <span class="glyphicon glyphicon-hand-right"> </span>
                                     Xem trang khuyến mãi
                                 <span class="glyphicon glyphicon-hand-right"> </span>
@@ -41,10 +30,10 @@
                     </div>
                 </div>
                 <hr>
-            @endforeach     
+            @endforeach        
             {{--  phan-trang  --}}
                 <div class="row text-center">
-                    {{$tinkhuyenmai->links()}}
+                    {{$hotpage->links()}}
                 </div>
             {{--  end-phan-trang  --}}
         </div>

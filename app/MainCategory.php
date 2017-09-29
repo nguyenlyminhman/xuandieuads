@@ -16,8 +16,4 @@ class MainCategory extends Model
     public function post(){
         return $this->hasManyThrough('App\Post','App\SubCategory','fk_idMainCategory','fk_idSubCategory','id');
     }
-    // //link to news table
-    // public function post(){
-    //     return $this-> hasMany('App\Post','fk_idMaincategory','id');
-    // }
 }

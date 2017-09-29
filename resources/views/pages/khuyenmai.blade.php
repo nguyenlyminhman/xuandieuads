@@ -28,12 +28,12 @@
                         <div class="row voucher-title">
                             <p> <a href="chi-tiet-khuyen-mai/{{$gg->id}}/{{$gg->title_seolink}}.html">{{$gg->title}}</a></p>
                         </div>
-                        <div class="row voucher-date"> 
+                        {{--  <div class="row voucher-date"> 
                             <span class="text-primary text"> 
                                 <span class="glyphicon glyphicon-calendar"></span> 
                                 Thời hạn : {{date("d/m/Y", strtotime($gg->expired_at))}}
                             </span>
-                        </div>
+                        </div>  --}}
                         <div class="row voucher-content">
                             <p> <span class="text-primary text"><span class="glyphicon glyphicon-hand-right"></span></span>
                                 {{$gg->short_content}} </p>

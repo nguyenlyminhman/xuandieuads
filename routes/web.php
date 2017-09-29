@@ -110,9 +110,13 @@ Route::group(['prefix'=>'admin', 'middleware'=>'adminlogin'], function(){
 //route for user 
 Route::get('home', 'PagesController@getHome');
 Route::get('hot', 'PagesController@getHot');
+Route::get('mua-online', 'PagesController@getMuaOnline');
 
-Route::get('giam-gia/{id}/{sub_cate_seolink}.html', 'PagesController@getMaGiamGia');
-Route::get('khuyen-mai/{id}/{sub_cate_seolink}.html', 'PagesController@getKhuyenMai');
+Route::get('ma-giam-gia-voucher/{id}/{sub_cate_seolink}.html', 'PagesController@getMaGiamGia');
+Route::get('ma-giam-gia-voucher', 'PagesController@getAllMaGiamGia');
+
+Route::get('tin-khuyen-mai/{id}/{sub_cate_seolink}.html', 'PagesController@getKhuyenMai');
+Route::get('tin-khuyen-mai', 'PagesController@getAllKhuyenMai');
 
 Route::get('chi-tiet-khuyen-mai/{id}/{title_seolink}.html', 'PagesController@getChiTietKhuyenMai');
 

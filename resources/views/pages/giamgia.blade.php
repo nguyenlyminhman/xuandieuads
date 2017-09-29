@@ -26,7 +26,7 @@
                             <div class="panel-heading text-uppercase panel-discount">Giảm
                             </div>
                             <div class="panel-body text-danger text-uppercase">
-                                <h1>{{$gg->discount}}</h1>
+                                <h2>{{$gg->discount}}</h2>
                             </div>
                         </div>
                     </div>
