@@ -55,10 +55,10 @@
                             <label for="exampleInputPassword1">Link-Liên Kết:</label>
                             <input type="text" class="form-control" name="link_to" value="{{ old('link_to') }}" placeholder="link-liên kết" required>
                         </div>
-                        <div class="form-group">
+                        {{--  <div class="form-group">
                             <label for="exampleInputPassword1">Thời Hạn:</label>
                             <input type="text" class="form-control" id='example1' name="expired_date" value="{{ old('expired_date') }}" placeholder="yyyy-mm-dd">
-                        </div>
+                        </div>  --}}
                         <div class="form-group">
                             <label for="exampleInputPassword1">Nội Dung Đầy Đủ:</label>
                             <textarea type="text" row="8" class="form-control ckeditor" name="full_content" placeholder="Nội dung đầy đủ">{{ old('full_content') }}</textarea>

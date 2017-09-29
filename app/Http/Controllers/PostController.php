@@ -10,9 +10,15 @@ use App\SubCategory;
 class PostController extends Controller
 {
     //get all post
-    public function getPostList(){
-        $post = Post::orderBy('id','desc')->get();
-        return view('admin.post.allpost',['post'=>$post]);
+    public function getPostAds(){
+        
+        $post =  MainCategory::find(1)->post()->paginate();
+        return view('admin.post.allads',['post'=>$post]);
+    }
+    public function getPostDiscount(){
+
+        $post =  MainCategory::find(2)->post()->paginate();
+        return view('admin.post.alldiscount',['post'=>$post]);
     }
     //discount
     public function getDiscountForm(){
@@ -116,7 +122,7 @@ class PostController extends Controller
         $post->high_light = $request->hlight;
         $post->created_at = date("Y-m-d");
         $post->updated_at = date("Y-m-d");
-        $post->expired_at = $request->expired_date;
+        $post->expired_at = date("Y-m-d"); //$request->expired_date;
         $post->fk_idSubCategory = $request->subcategory;
         $post->save();
         return redirect("admin/post/add-new-ads")->with('notification','Đã thêm thành công');
@@ -172,9 +178,9 @@ class PostController extends Controller
         $post->full_content = $request->full_content;
         $post->online = $request->online;
         $post->high_light = $request->hlight;
-        $post->created_at = date("Y-m-d");
-        $post->updated_at = date("Y-m-d");
-        $post->expired_at = $request->expired_date;
+        // $post->created_at = date("Y-m-d");
+        // $post->updated_at = date("Y-m-d");
+        // $post->expired_at = date("Y-m-d");
         $post->fk_idSubCategory = $request->subcategory;
         $post->save();
         return redirect("admin/post/edit/".$id)->with('notification','Đã thêm thành công');
@@ -201,7 +207,7 @@ class PostController extends Controller
         $post->full_content = "nothing";
         $post->online = $request->online;
         $post->high_light = $request->hlight;
-        $post->created_at = date("Y-m-d");
+        //$post->created_at = date("Y-m-d");
         $post->updated_at = date("Y-m-d");
         $post->expired_at = $request->expired_date;
         $post->fk_idSubCategory = $request->subcategory;

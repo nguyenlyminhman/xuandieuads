@@ -79,7 +79,8 @@ Route::group(['prefix'=>'admin', 'middleware'=>'adminlogin'], function(){
         //deleting discount post information
         Route::get('delete/{id}', 'PostController@deletePost');
         //get all post
-        Route::get('get-all-post', 'PostController@getPostList');
+        Route::get('get-all-ads', 'PostController@getPostAds');
+        Route::get('get-all-discount', 'PostController@getPostDiscount');
         //adding new discount code
         Route::get('add-new-discount-code', 'PostController@getDiscountForm');
         Route::post('add-new-discount-code', 'PostController@addToDiscountList');
@@ -113,10 +114,8 @@ Route::get('hot', 'PagesController@getHot');
 Route::get('mua-online', 'PagesController@getMuaOnline');
 
 Route::get('ma-giam-gia-voucher/{id}/{sub_cate_seolink}.html', 'PagesController@getMaGiamGia');
-Route::get('ma-giam-gia-voucher', 'PagesController@getAllMaGiamGia');
 
 Route::get('tin-khuyen-mai/{id}/{sub_cate_seolink}.html', 'PagesController@getKhuyenMai');
-Route::get('tin-khuyen-mai', 'PagesController@getAllKhuyenMai');
 
 Route::get('chi-tiet-khuyen-mai/{id}/{title_seolink}.html', 'PagesController@getChiTietKhuyenMai');
 

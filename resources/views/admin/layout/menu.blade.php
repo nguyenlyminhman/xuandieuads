@@ -42,16 +42,25 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="#"><i class="glyphicon glyphicon-book"></i> Bài Viết<span class="fa arrow"></span></a>
+                            <a href="#"><i class="glyphicon glyphicon-book"></i> Tin Khuyến Mãi<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="admin/post/get-all-post">Xem Tất Cả Bài Viết </a>
-                                </li>
-                                <li>
-                                    <a href="admin/post/add-new-discount-code">Thêm Mã Giảm Giá</a>
+                                    <a href="admin/post/get-all-ads">Danh Sách Tin Khuyến Mãi </a>
                                 </li>
                                 <li>
                                     <a href="admin/post/add-new-ads">Đăng Tin Khuyến Mãi</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="#"><i class="glyphicon glyphicon-book"></i> Mã Giảm Giá <span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="admin/post/get-all-discount">Danh Sách Mã Giảm Giá</a>
+                                </li>
+                                <li>
+                                    <a href="admin/post/add-new-discount-code">Thêm Mã Giảm Giá</a>
                                 </li>
                                 {{--  <li>
                                     <a href="#">Mã Giảm Giá<span class="fa arrow"></span></a>

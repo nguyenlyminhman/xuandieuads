@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <!DOCTYPE html>
 <html lang="en">
 <!-- saved from url=(0060)https://getbootstrap.com/docs/3.3/examples/navbar-fixed-top/ -->
-
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
