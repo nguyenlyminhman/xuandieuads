@@ -37,9 +37,7 @@
             </div>
             {{--  end-phan-trang  --}}
         </div>
-        <div class="col-sm-4">
             @include('layout.menuphai')
-        </div>
     </div>
 </div>
 <!--End new voucher-->

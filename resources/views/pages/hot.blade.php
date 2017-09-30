@@ -7,34 +7,36 @@
 <div class="container ">
     <div class="row">
         <div class="col-sm-8">
-            @foreach($hotpage as $ht)
-                <div class="row">
-                    <div class="col-sm-3">
-                        <img src="upload/image/{{$ht->image}}" height="125px" width="170px">
-                    </div>
-                    <div class="col-sm-9">
-                        <div class="row voucher-title">
-                            <p> <a href="chi-tiet-khuyen-mai/{{$ht->id}}/{{$ht->title_seolink}}.html">{{$ht->title}}</a></p>
+        <?php $i = 0 ?>
+            <div class="row">
+                @foreach($hotpage as $ht)
+                    <div class="col-sm-6" style="float: left">
+                        <img src="upload/image/{{$ht->image}}" height="250px" width="350px">
+                        <div class="text-center voucher-title">
+                            <p> 
+                                <a href="chi-tiet-khuyen-mai/{{$ht->id}}/{{$ht->title_seolink}}.html">
+                                    {{$ht->title}}
+                                </a>
+                            </p>
                         </div>
-                        <div class="row voucher-content">
-                        <p> <span class="text-primary text"><span class="glyphicon glyphicon-hand-right"></span></span>
-                             {{$ht->short_content}} </p>
-                        </div>
-                        <div class="row">
+                        <div class="row text-center">
                             <a target="_blank" href="{{$ht->link_to}}" type="button" class="btn btn-default">
                                 <span class="glyphicon glyphicon-hand-right"> </span>
-                                    Xem trang khuyến mãi
+                                    Xem thêm
                                 <span class="glyphicon glyphicon-hand-right"> </span>
                             </a>
-                        </div> 
+                        </div>
                     </div>
-                </div>
-                <hr>
-            @endforeach        
+                    <?php $i++; ?>
+                    @if($i%2==0)
+                        </div><br><div class="row">
+                    @endif
+                @endforeach  
+            </div>
             {{--  phan-trang  --}}
-                <div class="row text-center">
-                    {{$hotpage->links()}}
-                </div>
+            <div class="row text-center">
+                {{$hotpage->links()}}
+            </div>
             {{--  end-phan-trang  --}}
         </div>
 

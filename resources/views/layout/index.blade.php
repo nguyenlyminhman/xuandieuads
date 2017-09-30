@@ -37,10 +37,10 @@
   
     <!--end-carousel-->
     <!--begin-content-->
-    @yield('content');
+    @yield('content')
     <!--end-content-->
     <!-- begin-footer -->
-    @include('layout.footer');
+    @include('layout.footer')
     <!-- end-footer -->
     <!-- Bootstrap core JavaScript
     ================================================== -->
