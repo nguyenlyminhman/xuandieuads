@@ -17,8 +17,8 @@
                 @if($giakhang->categoryImage->id == 4)
                     <div class="col-sm-2 center giakhang_col">
                         <a target="_blank" href="{{$giakhang->link_to}}">
-                            <img src="images/new.png" class="img-responsive center-block">
-                            <img src="upload/image/{{$giakhang->img_name}}" class="img-responsive center-block" height="100px" width="150px" alt="Image">
+                            <img src="public/images/new.png" class="img-responsive center-block">
+                            <img src="public/upload/image/{{$giakhang->img_name}}" class="img-responsive center-block" height="100px" width="150px" alt="Image">
                         <p> {{$giakhang->title}}  </p></a>
                     </div>
                     <?php $i++ ?>

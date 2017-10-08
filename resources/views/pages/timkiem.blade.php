@@ -9,11 +9,7 @@
         <div class="col-sm-8">
             <div class=" row text-left">
                 <div class="col-sm-12">
-                    <h3>{{$loaikhuyenmai->sub_cate_name}}</h3>
-                    <h3>
-                        <small class="text-muted">{{$loaikhuyenmai->description}}</small>
-                    </h3>
-                    <p></p>
+                    <h3>Tìm kiếm: {{$tukhoa}}</h3>
                 </div>
             </div>
             <hr>
@@ -41,7 +37,7 @@
                         <div class="row">
                             <a target="_blank" href="{{$gg->link_to}}" type="button" class="btn btn-default">
                                 <span class="glyphicon glyphicon-hand-right"> </span>
-                                    Xem trang khuyến mãi
+                                    Đến trang khuyến mãi
                                 <span class="glyphicon glyphicon-hand-right"> </span>
                             </a>
                         </div> 

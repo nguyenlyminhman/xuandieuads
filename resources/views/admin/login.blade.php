@@ -9,9 +9,9 @@
     <title>Login - Xuân Diệu Ads</title>
 	<base href="{{asset('')}}">
     <!-- Bootstrap Core CSS -->
-    <link href="admin_asset/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	<link href="admin_asset/dist/css/sb-admin-2.css" rel="stylesheet">
-	<link href="admin_asset/vendor/login/login.css" rel="stylesheet">
+    <link href="./public/admin_asset/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="./public/admin_asset/dist/css/sb-admin-2.css" rel="stylesheet">
+	<link href="./public/admin_asset/vendor/login/login.css" rel="stylesheet">
 </head>
 <body>
 <div class="container">
@@ -51,8 +51,8 @@
 	</div>
 </div> <!-- /container -->
     <!-- jQuery -->
-    <script src="admin_asset/vendor/jquery/jquery.min.js"></script>
+    <script src="./public/admin_asset/vendor/jquery/jquery.min.js"></script>
     <!-- Bootstrap Core JavaScript -->
-    <script src="admin_asset/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="./public/admin_asset/vendor/bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>

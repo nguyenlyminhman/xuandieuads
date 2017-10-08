@@ -16,7 +16,6 @@ class PostController extends Controller
         return view('admin.post.allads',['post'=>$post]);
     }
     public function getPostDiscount(){
-
         $post =  MainCategory::find(2)->post()->paginate();
         return view('admin.post.alldiscount',['post'=>$post]);
     }
@@ -25,6 +24,7 @@ class PostController extends Controller
         $submenu = SubCategory::where('fk_idMainCategory', 2)->get();
         return view('admin.post.addnewdiscount', ['submenu'=>$submenu]);
     }
+    //add new discount item
     public function addToDiscountList(Request $request){
         $post = new Post;
         $this->validate($request,
@@ -46,23 +46,27 @@ class PostController extends Controller
             'short_content.max'=>'Nội dung tóm tắt từ 5 đến 100 kí tự.'
         ]);
         
-        if($request->hasFile('imgfile')){
-            $file = $request->file('imgfile');
-            $name = $file -> getClientOriginalName();
-            $img_name = str_random(5)."_".$name;
-            while(file_exists("upload/image/".$img_name)){
-                $img_name = str_random(5)."_".$name;
-            }
-            $file->move("upload/image",$img_name);
-            $post->image = $img_name;
-        }
+        // if($request->hasFile('imgfile')){
+        //     $file = $request->file('imgfile');
+        //     $tail = $file->getClientOriginalExtension();
+        //     if($tail != 'png' && $tail != 'jpg' && $tail != 'jpeg'){
+        //         return redirect("admin/post/add-new-discount-code")->with('notification','Sai định dạng ảnh. Chỉ cho phép ảnh có đuôi png, jpg, jpeg.');
+        //     }
+        //     $name = $file -> getClientOriginalName();
+        //     $img_name = str_random(5)."_".$name;
+        //     while(file_exists("upload/image/".$img_name)){
+        //         $img_name = str_random(5)."_".$name;
+        //     }
+        //     $file->move("upload/image",$img_name);
+        //     $post->image = $img_name;
+        // }
 
         $post->title = $request->title;
         $post->title_seolink = removeURL($request->title);
         $post->link_to = $request->link_to;
         $post->discount = $request->discount;
         $post->discount_code = $request->discount_code;
-        // $post->image = "defaul.jpg";
+        $post->image = "defaul.jpg";
         $post->short_content = $request->short_content;
         $post->full_content = "nothing";
         $post->online = "1";
@@ -74,18 +78,53 @@ class PostController extends Controller
         $post->save();
         return redirect("admin/post/add-new-discount-code")->with('notification','Đã thêm thành công');
     }
+     //update discount
+     public function updateDiscount(Request $request, $id){
+        $post = Post::find($id);
+        // if($request->hasFile('imgfile')){
+        //     $file = $request->file('imgfile');
+        //     $tail = $file->getClientOriginalExtension();
+        //     if($tail != 'png' && $tail != 'jpg' && $tail != 'jpeg'){
+        //         return redirect("admin/post/add-new-discount-code")->with('notification','Sai định dạng ảnh. Chỉ cho phép ảnh có đuôi png, jpg, jpeg.');
+        //     }
+        //     $name = $file -> getClientOriginalName();
+        //     $img_name = str_random(5)."_".$name;
+        //     while(file_exists("upload/image/".$img_name)){
+        //         $img_name = str_random(5)."_".$name;
+        //     }
+        //     $file->move("upload/image",$img_name);
+        //     $post->image = $img_name;
+        // }
+        $post->title = $request->title;
+        $post->title_seolink = removeURL($request->title);
+        $post->link_to = $request->link_to;
+        $post->discount = $request->discount;
+        $post->discount_code = $request->discount_code;
+        $post->short_content = $request->short_content;
+        // $post->full_content = "nothing";
+        // $post->online = $request->online;
+        // $post->high_light = $request->hlight;
+        // $post->created_at = date("Y-m-d");
+        $post->updated_at = date("Y-m-d");
+        $post->expired_at = $request->expired_date;
+        $post->fk_idSubCategory = $request->subcategory;
+        $post->save();
+        return redirect("admin/post/edit/".$id)->with('notification','Đã cập nhật thành công');
+    }
     //advertisment
     public function getAdsForm(){
         $submenu = SubCategory::where('fk_idMainCategory', 1)->get();
         return view('admin.post.addnewads', ['submenu'=>$submenu]);
     }
+    //add new ads item
     public function addToAdsList(Request $request){
         $post = new Post;
         $this->validate($request,
         [
             'title'=>'required|min:5|max:250',
             'link_to'=>'required|min:5|max:250',
-            'short_content'=>'required|min:5|max:500'
+            'short_content'=>'required|min:5|max:500',
+            'imgfile'=>'required'
         ]
         ,
         [
@@ -97,17 +136,22 @@ class PostController extends Controller
             'link_to.max'=>'Link liên kết từ 5 đến 250 kí tự',
             'short_content.required'=>'Hãy nhập vào nội dung tóm tắt.',
             'short_content.min'=>'Nội dung tóm tắt từ 5 đến 100 kí tự.',
-            'short_content.max'=>'Nội dung tóm tắt từ 5 đến 100 kí tự.'
+            'short_content.max'=>'Nội dung tóm tắt từ 5 đến 100 kí tự.',
+            'imgfile.required'=>'Hãy chọn một hình ảnh có đuôi png, jpg, jpeg.'
         ]);
 
         if($request->hasFile('imgfile')){
             $file = $request->file('imgfile');
+            $tail = $file->getClientOriginalExtension();
+                if($tail != 'png' && $tail != 'jpg' && $tail != 'jpeg'){
+                    return redirect("admin/post/add-new-ads")->with('errors','Sai định dạng ảnh. Chỉ cho phép ảnh có đuôi png, jpg, jpeg.');
+                }
             $name = $file -> getClientOriginalName();
             $img_name = str_random(5)."_".$name;
-            while(file_exists("upload/image/".$img_name)){
+            while(file_exists("public/upload/image/".$img_name)){
                 $img_name = str_random(5)."_".$name;
             }
-            $file->move("upload/image",$img_name);
+            $file->move("public/upload/image",$img_name);
             $post->image = $img_name;
         }
 
@@ -122,7 +166,7 @@ class PostController extends Controller
         $post->high_light = $request->hlight;
         $post->created_at = date("Y-m-d");
         $post->updated_at = date("Y-m-d");
-        $post->expired_at = date("Y-m-d"); //$request->expired_date;
+        $post->expired_at = date("Y-m-d");
         $post->fk_idSubCategory = $request->subcategory;
         $post->save();
         return redirect("admin/post/add-new-ads")->with('notification','Đã thêm thành công');
@@ -160,60 +204,36 @@ class PostController extends Controller
 
         if($request->hasFile('imgfile')){
             $file = $request->file('imgfile');
+            $tail = $file->getClientOriginalExtension();
+                if($tail != 'png' && $tail != 'jpg' && $tail != 'jpeg'){
+                    return redirect("admin/post/edit/".$id)->with('errors','Sai định dạng ảnh. Chỉ cho phép ảnh có đuôi png, jpg, jpeg.');
+                }
             $name = $file -> getClientOriginalName();
             $img_name = str_random(5)."_".$name;
-            while(file_exists("upload/image/".$img_name)){
+            while(file_exists("public/upload/image/".$img_name)){
                 $img_name = str_random(5)."_".$name;
             }
-            $file->move("upload/image",$img_name);
+            $file->move("public/upload/image",$img_name);
             $post->image = $img_name;
         }
 
         $post->title = $request->title;
         $post->title_seolink = removeURL($request->title);
         $post->link_to = $request->link_to;
-        $post->discount = "";
-        $post->discount_code = "";
+        // $post->discount = "";
+        // $post->discount_code = "";
         $post->short_content = $request->short_content;
         $post->full_content = $request->full_content;
         $post->online = $request->online;
         $post->high_light = $request->hlight;
         // $post->created_at = date("Y-m-d");
-        // $post->updated_at = date("Y-m-d");
+        $post->updated_at = date("Y-m-d");
         // $post->expired_at = date("Y-m-d");
         $post->fk_idSubCategory = $request->subcategory;
         $post->save();
-        return redirect("admin/post/edit/".$id)->with('notification','Đã thêm thành công');
+        return redirect("admin/post/edit/".$id)->with('notification','Đã cập nhật thành công');
     }
-    //update ads
-    public function updateDiscount(Request $request, $id){
-        $post = Post::find($id);
-        if($request->hasFile('imgfile')){
-            $file = $request->file('imgfile');
-            $name = $file -> getClientOriginalName();
-            $img_name = str_random(5)."_".$name;
-            while(file_exists("upload/image/".$img_name)){
-                $img_name = str_random(5)."_".$name;
-            }
-            $file->move("upload/image",$img_name);
-            $post->image = $img_name;
-        }
-        $post->title = $request->title;
-        $post->title_seolink = removeURL($request->title);
-        $post->link_to = $request->link_to;
-        $post->discount = $request->discount;
-        $post->discount_code = $request->discount_code;
-        $post->short_content = $request->short_content;
-        $post->full_content = "nothing";
-        $post->online = $request->online;
-        $post->high_light = $request->hlight;
-        //$post->created_at = date("Y-m-d");
-        $post->updated_at = date("Y-m-d");
-        $post->expired_at = $request->expired_date;
-        $post->fk_idSubCategory = $request->subcategory;
-        $post->save();
-        return redirect("admin/post/edit/".$id)->with('notification','Đã thêm thành công');
-    }
+   
     //delete post
     public function deletePost($id){
         $post = Post::find($id);

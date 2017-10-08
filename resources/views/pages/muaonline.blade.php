@@ -11,7 +11,7 @@
             <div class="row">
                 @foreach($online as $on)
                     <div class="col-sm-6" style="float: left">
-                        <img src="upload/image/{{$on->image}}" height="250px" width="350px">
+                        <img src="public/upload/image/{{$on->image}}" height="250px" width="350px">
                         <div class="text-center voucher-title">
                             <p> 
                                 <a href="chi-tiet-khuyen-mai/{{$on->id}}/{{$on->title_seolink}}.html">

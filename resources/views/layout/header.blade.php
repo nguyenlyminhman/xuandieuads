@@ -27,14 +27,15 @@
                 @endforeach
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <form class="navbar-form navbar-right" role="search">
+                <form action="timkiem" method="Post" class="navbar-form navbar-right" role="search">
                     <div class="form-group input-group">
-                        <input type="text" class="form-control" placeholder="Search..">
-                        <span class="input-group-btn">
-                        <button class="btn btn-default" type="button">
-                        <span class="glyphicon glyphicon-search"></span>
-                        </button>
-                        </span>
+                        <input type="hidden" name="_token" value="{{csrf_token()}}" />      
+                            <input type="text" name="tukhoa" class="form-control" placeholder="Tìm kiếm..." />
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="submit">
+                                    <span class="glyphicon glyphicon-search"></span>
+                                </button>
+                            </span>
                     </div>
                 </form>
             </ul>

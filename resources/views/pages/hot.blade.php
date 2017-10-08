@@ -11,7 +11,7 @@
             <div class="row">
                 @foreach($hotpage as $ht)
                     <div class="col-sm-6" style="float: left">
-                        <img src="upload/image/{{$ht->image}}" height="250px" width="350px">
+                        <img src="public/upload/image/{{$ht->image}}" height="250px" width="350px">
                         <div class="text-center voucher-title">
                             <p> 
                                 <a href="chi-tiet-khuyen-mai/{{$ht->id}}/{{$ht->title_seolink}}.html">

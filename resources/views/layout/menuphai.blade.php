@@ -12,7 +12,7 @@
                             <div class="media">
                                 <a href="chi-tiet-khuyen-mai/{{$ht->id}}/{{$ht->title_seolink}}.html">
                                     <div class="media-left media-top">
-                                        <img src="upload/image/{{$ht->image}}" class="media-object"  height="75px" width="100px">
+                                        <img src="public/upload/image/{{$ht->image}}" class="media-object"  height="75px" width="100px">
                                     </div>
                                     <div class="media-body">
                                         <h4 class="media-heading">{{$ht->title}}</h4>
@@ -30,7 +30,7 @@
                         <li class="list-group-item" style="border: none"> 
                             <div class="media">
                                 <div class="media-left media-top">
-                                    <img src="images/promotion.png" class="media-object">
+                                    <img src="public/images/promotion.png" class="media-object">
                                 </div>
                                 <div class="media-body">
                                     <h4>{{$mmnu->main_cate_name}}</h4>
@@ -43,7 +43,7 @@
                                         <a href="{{$mmnu->id == 1 ? 'tin-khuyen-mai' : 'ma-giam-gia-voucher'}}/{{$smnu->id}}/{{$smnu->sub_cate_seolink}}.html" class="list-group-item" style="text-decoration: none">
                                             <div class="media">
                                                 <div class="media-left media-top">
-                                                    <img src="images/promotion.png" class="media-object">
+                                                    <img src="public/images/promotion.png" class="media-object">
                                                 </div>
                                                 <div class="media-body">
                                                         <h4>{{$smnu->sub_cate_name}}</h4>
@@ -72,7 +72,7 @@
                             <div class="media">
                                 <a href="chi-tiet-khuyen-mai/{{$online->id}}/{{$online->title_seolink}}.html">
                                     <div class="media-left media-top">
-                                        <img src="upload/image/{{$online->image}}" class="media-object" height="75px" width="100px">
+                                        <img src="public/upload/image/{{$online->image}}" class="media-object" height="75px" width="100px">
                                     </div>
                                     <div class="media-body">
                                         <h4 class="media-heading">{{$online->title}}</h4>

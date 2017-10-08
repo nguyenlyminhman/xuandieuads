@@ -94,8 +94,8 @@
                             <tr>
                                 <td>{{$img->id}}</td>
                                 <td>
+                                    <img src="./public/upload/image/{{$img->img_name}}" class="img-rounded" width="100px" height="75px" />
                                     <p>{{$img->title}}</p>
-                                    <img src="upload/image/{{$img->img_name}}" class="img-rounded" width="100px" height="75px" />
                                 </td>
                                 <td>{{substr($img->link_to, 0, 50)}}</td>
                                 <td>{{$img->categoryImage->name}}</td>
@@ -103,9 +103,8 @@
                                 <td>{{date("d/m/Y", strtotime($img->updated_at))}}</td>
                                 <td>
                                 <a href="admin/image/edit/{{$img->id}}" type="button" class="btn btn-warning">Chỉnh Sửa</a><br/><br/>
-                                    
-                                        <a  href="admin/image/delete/{{$img->id}}" type="button" class="btn btn-danger" 
-                                            onclick='return confirm("Lưu ý: Sau khi xóa, tất cả bài viết liên quan cũng sẽ mất.\n           Có chắc muốn xóa chuyên mục này?");'>Xóa</a>
+                                    <a  href="admin/image/delete/{{$img->id}}" type="button" class="btn btn-danger" 
+                                        onclick='return confirm("Lưu ý: Sau khi xóa, tất cả bài viết liên quan cũng sẽ mất.\n           Có chắc muốn xóa chuyên mục này?");'>Xóa</a>
                                 </td>
                             </tr>
                             @endforeach

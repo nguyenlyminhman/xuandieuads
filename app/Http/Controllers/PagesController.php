@@ -58,4 +58,11 @@ class PagesController extends Controller
         $chitietkhuyenmai = Post::find($id);
         return view('pages.chitiet', ['title'=>'Chi Tiết Khuyễn Mãi...', 'chitietkhuyenmai'=> $chitietkhuyenmai]);
     }
+
+    function postTimKiem(Request $request){
+        $tukhoa = $request->tukhoa;
+        $tinkhuyenmai = MainCategory::find(1)->post()->where('title','like','%'.$tukhoa.'%')->
+                        orwhere('short_content','like','%'.$tukhoa.'%')->take(60)->paginate(10);
+        return view('pages.timkiem', ['title'=>'Tìm kiếm...', 'tukhoa'=>$tukhoa ,'tinkhuyenmai'=> $tinkhuyenmai]);
+    }
 }

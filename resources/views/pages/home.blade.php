@@ -11,7 +11,7 @@
             @foreach($khuyenmai as $home)
                 <div class="row">
                     <div class="col-sm-3">
-                        <img src="upload/image/{{$home->image}}" height="125px" width="170px">
+                        <img src="public/upload/image/{{$home->image}}" height="125px" width="170px">
                     </div>
                     <div class="col-sm-9">
                         <div class="row voucher-title">

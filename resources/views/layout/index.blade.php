@@ -15,16 +15,16 @@
     <title>Xuan Dieu | @yield('title') </title>
     <base href="{{asset('')}}" >
     <!-- Bootstrap core CSS -->
-    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="./public/css/bootstrap.min.css" rel="stylesheet">
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="./css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="./public/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link href="./css/navbar-fixed-top.css" rel="stylesheet">
+    <link href="./public/css/navbar-fixed-top.css" rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link href="./css/xuandieu_ads.style.css" rel="stylesheet">
+    <link href="./public/css/xuandieu_ads.style.css" rel="stylesheet">
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="./js/ie-emulation-modes-warning.js"></script>
+    <script src="./public/js/ie-emulation-modes-warning.js"></script>
 </head>
 
 <body>
@@ -45,11 +45,11 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="./js/xuandieu_ads.min.js"></script>
-    <script src="./js/jquery.min.js"></script>
-    <script src="./js/bootstrap.min.js"></script>
+    <script src="./public/js/xuandieu_ads.min.js"></script>
+    <script src="./public/js/jquery.min.js"></script>
+    <script src="./public/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="./js/ie10-viewport-bug-workaround.js"></script>
+    <script src="./public/js/ie10-viewport-bug-workaround.js"></script>
     @yield('script')
 </body>
 <div id="fb-root"></div>

@@ -31,12 +31,16 @@ class ImageController extends Controller
         ]);
         if($request->hasFile('imgfile')){
             $file = $request->file('imgfile');
+            $tail = $file->getClientOriginalExtension();
+            if($tail != 'png' && $tail != 'jpg' && $tail != 'jpeg'){
+                return redirect("admin/image/get-all-image")->with('notification','Sai định dạng ảnh. Chỉ cho phép ảnh có đuôi png, jpg, jpeg.');
+            }
             $name = $file -> getClientOriginalName();
             $img_name = str_random(5)."_".$name;
-            while(file_exists("upload/image/".$img_name)){
+            while(file_exists("public/upload/image/".$img_name)){
                 $img_name = str_random(8)."_".$name;
             }
-            $file->move("upload/image",$img_name);
+            $file->move("public/upload/image",$img_name);
             $image->img_name = $img_name;
         }else{
             $image->img_name = "default.jpg";
@@ -74,13 +78,17 @@ class ImageController extends Controller
         ]);
         if($request->hasFile('imgfile')){
             $file = $request->file('imgfile');
+            $tail = $file->getClientOriginalExtension();
+            if($tail != 'png' && $tail != 'jpg' && $tail != 'jjpeg'){
+                return redirect("admin/image/edit/".$id)->with('notification','Sai định dạng ảnh. Chỉ cho phép ảnh có đuôi png, jpg, jpeg.');
+            }
             $name = $file -> getClientOriginalName();
             $img_name = str_random(5)."_".$name;
             while(file_exists("upload/image/".$img_name)){
                 $img_name = str_random(8)."_".$name;
             }
-            $file->move("upload/image",$img_name);
-            unlink("upload/image/".$image->img_name);
+            $file->move("public/upload/image",$img_name);
+            unlink("public/upload/image/".$image->img_name);
             $image->img_name = $img_name;
         }
         $image->link_to = $request->link_to;

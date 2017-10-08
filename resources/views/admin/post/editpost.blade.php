@@ -92,7 +92,7 @@
                         <br>
                         <div class="form-group">
                             <label for="email">Ảnh Hiện Tại:</label><br>
-                            <img src="upload/image/{{$post->image}}" class="img-rounded" width="250px" height="175px" />
+                            <img src="public/upload/image/{{$post->image}}" class="img-rounded" width="250px" height="175px" />
                         <br><label for="email">{{$post->image}}</label>
                         </div>
                         <div class="form-group">
@@ -166,7 +166,7 @@
                         <br>
                         <div class="form-group">
                             <label for="email">Ảnh Hiện Tại:</label><br>
-                            <img src="upload/image/{{$post->image}}" class="img-rounded" width="250px" height="175px" />
+                            <img src="public/upload/image/{{$post->image}}" class="img-rounded" width="250px" height="175px" />
                         <br><label for="email">{{$post->image}}</label>
                         </div>
                         <div class="form-group">

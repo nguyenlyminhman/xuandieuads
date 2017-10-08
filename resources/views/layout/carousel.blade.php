@@ -19,7 +19,7 @@
                         @if($carousel->categoryImage->id == 1)
                             <div class="{{$i==0 ? 'item active':'item'}}">
                                 <a target="_blank" href="{{$carousel->link_to}}">
-                                    <img src="upload/image/{{$carousel->img_name}}" alt="Image" height="425px" width="800px">
+                                    <img src="public/upload/image/{{$carousel->img_name}}" alt="Image" height="425px" width="800px">
                                 </a>
                             </div>
                             <?php $i++ ?>
@@ -46,7 +46,7 @@
                         <div class="media">
                             <a href="chi-tiet-khuyen-mai/{{$ht->id}}/{{$ht->title_seolink}}.html">
                                 <div class="media-left media-top">
-                                    <img src="upload/image/{{$ht->image}}" class="media-object" height="75px" width="100px">
+                                    <img src="public/upload/image/{{$ht->image}}" class="media-object" height="75px" width="100px">
                                 </div>
                                 <div class="media-body">
                                     <h4 class="media-heading">{{$ht->title}}</h4>
