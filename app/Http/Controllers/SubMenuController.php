@@ -19,17 +19,22 @@ class SubMenuController extends Controller
         $subMenu = new SubCategory;
         $this->validate($request,
         [
-            'sub_cate_name'=>'required|unique:sub_category,sub_cate_name|min:3|max:100'
+            'sub_cate_name'=>'required|unique:sub_category,sub_cate_name|min:3|max:100',
+            'description'=>'required|min:3|max:500'
         ],
         [
-            'sub_cate_name.required'=>'Chưa nhập tên menu chính.',
+            'sub_cate_name.required'=>'Chưa nhập tên menu phụ.',
             'sub_cate_name.unique'=>'Tên Menu đã tồn tại. Hãy chọn tên Menu khác.',
-            'sub_cate_name.min'=>'Tên menu chính có độ dài từ 3 đến 100 kí tự.',
-            'sub_cate_name.max'=>'Tên menu chính có độ dài từ 3 đến 100 kí tự.'
+            'sub_cate_name.min'=>'Tên menu phụ có độ dài từ 3 đến 100 kí tự.',
+            'sub_cate_name.max'=>'Tên menu phụ có độ dài từ 3 đến 100 kí tự.',
+            'description.required'=>'Chưa nhập miêu tả.',
+            'description.min'=>'Miêu tả có độ dài từ 3 đến 500 kí tự.',
+            'description.max'=>'Miêu tả có độ dài từ 3 đến 500 kí tự.'
         ]);
         $subMenu->sub_cate_name = $request->sub_cate_name;
         $subMenu->sub_cate_seolink = removeURL($request->sub_cate_name);
         $subMenu->sub_cate_status = 0;
+        $subMenu->description = $request->description;
         $subMenu->created_at =  date("Y-m-d");
         $subMenu->updated_at =  date("Y-m-d");
         $subMenu->fk_idMainCategory = $request->fk_idmaincategory;  
@@ -48,15 +53,20 @@ class SubMenuController extends Controller
         $this->validate($request,
         [
             'sub_cate_name'=>'required|min:3|max:100',
+            'description'=>'required|min:3|max:500'
         ],
         [   
-            'sub_cate_name.required'=>'Chưa nhập tên menu chính.',
+            'sub_cate_name.required'=>'Chưa nhập tên menu phụ.',
             'sub_cate_name.min'=>'Tên menu phụ có độ dài từ 3 đến 100 kí tự.',
-            'sub_cate_name.max'=>'Tên menu phụ có độ dài từ 3 đến 100 kí tự.'
+            'sub_cate_name.max'=>'Tên menu phụ có độ dài từ 3 đến 100 kí tự.',
+            'description.required'=>'Chưa nhập miêu tả.',
+            'description.min'=>'Miêu tả có độ dài từ 3 đến 500 kí tự.',
+            'description.max'=>'Miêu tả có độ dài từ 3 đến 500 kí tự.'
         ]);
         $subMenu->sub_cate_name = $request->sub_cate_name;
         $subMenu->sub_cate_seolink = removeURL($request->sub_cate_name);
         $subMenu->sub_cate_status = $request->status;
+        $subMenu->description = $request->description;
         $subMenu->updated_at =  date("Y-m-d");
         $subMenu->fk_idMainCategory = $request->idmaincategory;
         $subMenu->save();

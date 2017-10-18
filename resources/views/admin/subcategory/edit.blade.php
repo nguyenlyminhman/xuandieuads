@@ -42,6 +42,10 @@
                             <input type="text" class="form-control" name="sub_cate_name" placeholder="Tên menu phụ" value="{{$subMenu->sub_cate_name}}">
                         </div>
                         <div class="form-group">
+                            <label for="exampleInputPassword1">Miêu Tả:</label>
+                            <textarea type="text" class="form-control" name="description"> {{$subMenu->description}} </textarea>
+                        </div>
+                        <div class="form-group">
                             <label for="email">Trạng Thái:</label><br>
                             @if($subMenu->sub_cate_status == 1 )
                                 {!!    
@@ -55,6 +59,7 @@
                                 !!}
                             @endif  
                         </div>
+                        
                         <button type="submit" class="btn btn-default">Cập Nhật</button>
                         <a href="admin/sub-menu/get-sub-menu-list" type="submit" class="btn btn-default">Quay Lại</a>
                     </form>

@@ -102,7 +102,7 @@
                                 <td>{{$img->click_counter}}</td>
                                 <td>{{date("d/m/Y", strtotime($img->updated_at))}}</td>
                                 <td>
-                                <a href="admin/image/edit/{{$img->id}}" type="button" class="btn btn-warning">Chỉnh Sửa</a><br/><br/>
+                                <a href="admin/image/edit/{{$img->id}}" type="button" class="btn btn-warning">Sửa</a><br/><br/>
                                     <a  href="admin/image/delete/{{$img->id}}" type="button" class="btn btn-danger" 
                                         onclick='return confirm("Lưu ý: Sau khi xóa, tất cả bài viết liên quan cũng sẽ mất.\n           Có chắc muốn xóa chuyên mục này?");'>Xóa</a>
                                 </td>

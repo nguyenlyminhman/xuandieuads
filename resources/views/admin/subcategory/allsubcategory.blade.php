@@ -48,9 +48,12 @@
                     </div>
                     <div class="form-group">
                         <label for="email">Tên Menu Phụ:</label>
-                        <input type="text" class="form-control" name="sub_cate_name" placeHolder="Nhập tên menu phụ" required />
+                        <input type="text" class="form-control" name="sub_cate_name" value="{{ old('sub_cate_name') }}"placeHolder="Nhập tên menu phụ" required />
                     </div>
-                   
+                   <div class="form-group">
+                            <label for="exampleInputPassword1">Miêu Tả:</label>
+                            <textarea type="text" class="form-control" name="description"> {{ old('description') }} </textarea>
+                    </div>
 
                     <button type="submit" class="btn btn-default">Thêm</button>
                     <button type="reset" class="btn btn-default">Đặt Lại</button>
@@ -74,6 +77,7 @@
                                 <th>#</th>
                                 <th>Menu Phụ</th>
                                 <th>Menu Chính</th>
+                                <th>Miêu Tả</th>
                                 <th>Trạng Thái</th>
                                 <th>Ngày Tạo</th>
                                 <th>Lần Cuối Cập Nhật</th>
@@ -86,6 +90,7 @@
                                 <td>{{$smenu->id}}</td>
                                 <td>{{$smenu->sub_cate_name}}</td>
                                 <td>{{$smenu->mainCategory->main_cate_name}}</td>
+                                <td>{{$smenu->description}}</td>
                                 <td>{!!$smenu->sub_cate_status== 1 ? "<strong class='text-danger'> Bật </strong>" : "Tắt"!!}</td>
                                 <td>{{date("d/m/Y", strtotime($smenu->created_at))}}</td>
                                 <td>{{date("d/m/Y", strtotime($smenu->updated_at))}}</td>

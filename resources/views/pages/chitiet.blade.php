@@ -13,6 +13,7 @@
             $chitietkhuyenmai->full_content
            !!}
            </p>
+           @include('pages.quantam')
         </div>
         @include('layout.menuphai')
     </div>

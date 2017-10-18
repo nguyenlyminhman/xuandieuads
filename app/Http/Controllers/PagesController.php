@@ -15,6 +15,7 @@ class PagesController extends Controller
         $smenu = SubCategory::all()->sortBy('fk_idMainCategory');
         $image = Image::all()->sortByDesc('id');
         $hot = Post::all()->sortByDesc('id');
+        $quantam = Post::where('online', 0)->latest()->take(9)->paginate(10);
         view()->share('mmenu', $mmenu);
         //lấy 
         view()->share('smenu', $smenu);
@@ -22,6 +23,7 @@ class PagesController extends Controller
         view()->share('image', $image);
         //xuat hien 5 tin hot canh carousel
         view()->share('hot', $hot);
+        view()->share('quantam', $quantam);
     }
     //
     function getHome(){
@@ -55,8 +57,9 @@ class PagesController extends Controller
     //     return view('pages.khuyenmai', ['title'=>'Tin Khuyễn Mãi...', 'loaikhuyenmai'=> $loaikhuyenmai, 'tinkhuyenmai'=> $tinkhuyenmai]);
     // }
     function getChiTietKhuyenMai($id){
+       
         $chitietkhuyenmai = Post::find($id);
-        return view('pages.chitiet', ['title'=>'Chi Tiết Khuyễn Mãi...', 'chitietkhuyenmai'=> $chitietkhuyenmai]);
+        return view('pages.chitiet', ['title'=>'Chi Tiết Khuyễn Mãi...','chitietkhuyenmai'=> $chitietkhuyenmai]);
     }
 
     function postTimKiem(Request $request){
@@ -65,4 +68,5 @@ class PagesController extends Controller
                         orwhere('short_content','like','%'.$tukhoa.'%')->take(60)->paginate(10);
         return view('pages.timkiem', ['title'=>'Tìm kiếm...', 'tukhoa'=>$tukhoa ,'tinkhuyenmai'=> $tinkhuyenmai]);
     }
+    
 }
