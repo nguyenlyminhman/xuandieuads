@@ -9,9 +9,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::get('admin/login', 'UserController@getLoginForm');
 Route::post('admin/login', 'UserController@loginAdmin');
@@ -109,7 +109,7 @@ Route::group(['prefix'=>'admin', 'middleware'=>'adminlogin'], function(){
 });
 
 //route for user 
-Route::get('home', 'PagesController@getHome');
+Route::get('/', 'PagesController@getHome');
 Route::get('hot', 'PagesController@getHot');
 Route::get('mua-online', 'PagesController@getMuaOnline');
 Route::get('ma-giam-gia-voucher/{id}/{sub_cate_seolink}.html', 'PagesController@getMaGiamGia');

@@ -26,6 +26,7 @@
                             <a target="_blank" href="chi-tiet-khuyen-mai/{{$home->id}}/{{$home->title_seolink}}.html" type="button" class="btn btn-default">
                                 Xem thêm
                             </a>
+                            
                         </div> 
                     </div>
                 </div>
