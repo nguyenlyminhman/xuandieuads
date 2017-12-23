@@ -17,9 +17,9 @@
                     <?php $i=0 ?>
                     @foreach($image as $carousel)
                         @if($carousel->categoryImage->id == 1)
-                            <div class="{{$i==0 ? 'item active':'item'}}">
+                            <div class="{{$i==0 ? 'item active':'item'}}" style="height='425px' width='800px'>
                                 <a target="_blank" href="{{$carousel->link_to}}">
-                                    <img src="public/upload/image/{{$carousel->img_name}}" alt="Image" height="425px" width="800px">
+                                    <img src="public/upload/image/{{$carousel->img_name}}" alt="Image"  height="425px" width="800px" />
                                 </a>
                             </div>
                             <?php $i++ ?>
@@ -40,7 +40,7 @@
         <!-- HOT TRONG NGAY -->
         <div class="col-sm-4 carousel_hot_news">
             @foreach($mmenu as $hot)
-                <?php $data = $hot->post->where('high_light',0)->sortByDesc('created_at')->take(5) ?>
+                <?php $data = $hot->post->where('high_light',0)->sortByDesc('id')->take(5) ?>
                  @foreach($data->all() as $ht)
                     <div class="row">
                         <div class="media">

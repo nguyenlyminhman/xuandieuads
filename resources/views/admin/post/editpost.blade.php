@@ -24,7 +24,7 @@
                             @endif
                             @if(session('notification'))
                                 <div class="alert alert-success">
-                                        {{session('notification')}} <br> <a href="admin/post/get-all-post" class="btn btn-default">Quay Lại</a>
+                                        {{session('notification')}}
                                 </div>
                             @endif
                 </div>
@@ -69,26 +69,6 @@
                             <label for="exampleInputPassword1">Nội Dung Tóm Tắt:</label>
                             <textarea type="text" row="9" name="short_content" class="form-control" placeholder="Nội dung tóm tắt" required>{{$post->short_content}}</textarea>
                         </div>
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">Tin Nổi Bật:</label> &nbsp;&nbsp;&nbsp;&nbsp;
-                            @if($post->high_light == 0)
-                                <label class="radio-inline"><input value="0" type="radio" name="hlight" checked>Có</label>
-                                <label class="radio-inline"><input value="1" type="radio" name="hlight" >Không</label>
-                            @else
-                                <label class="radio-inline"><input value="0" type="radio" name="hlight" >Có</label>
-                                <label class="radio-inline"><input value="1" type="radio" name="hlight" checked>Không</label>
-                            @endif
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">Mua Online:</label>  &nbsp;&nbsp;&nbsp;&nbsp;
-                            @if($post->online == 0)
-                                <label class="radio-inline"><input value="0" type="radio" name="online" checked>Có</label>
-                                <label class="radio-inline"><input value="1" type="radio" name="online" >Không</label>
-                            @else
-                                <label class="radio-inline"><input value="0" type="radio" name="online" >Có</label>
-                                <label class="radio-inline"><input value="1" type="radio" name="online" checked>Không</label>
-                            @endif
-                        </div>
                         <br>
                         <div class="form-group">
                             <label for="email">Ảnh Hiện Tại:</label><br>
@@ -103,7 +83,7 @@
                         <div class="form-group">
                             <button type="submit" class="btn btn-default">Cập Nhật</button>
                             <button type="reset" class="btn btn-default">Đặt Lại</button>
-                            <a href="admin/post/get-all-post" class="btn btn-default">Quay Lại</a>
+                            <a href="admin/post/get-all-discount" class="btn btn-default">Quay Lại</a>
                         </div>
                     </form>
                 {{--  end form edit discount code  --}}
@@ -177,7 +157,7 @@
                         <div class="form-group">
                             <button type="submit" class="btn btn-default">Cập Nhật</button>
                             <button type="reset" class="btn btn-default">Đặt Lại</button>
-                            <a href="admin/post/get-all-post" class="btn btn-default">Quay Lại</a>
+                            <a href="admin/post/get-all-ads" class="btn btn-default">Quay Lại</a>
                         </div>
                     </form>
                 {{--  end form edit ads --}}

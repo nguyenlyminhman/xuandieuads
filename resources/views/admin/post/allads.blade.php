@@ -41,7 +41,7 @@
                                 {{--  <a href="admin/post/edit/[{{$pt->subCategory->mainCategory->id}}, {{$pt->id}}]" type="button" class="btn btn-warning">Sửa</a><br><br>  --}}
                                     <a href="admin/post/edit/{{$pt->id}}" type="button" class="btn btn-warning">Sửa</a><br><br>
                                     @if($pt->main_cate_status== 0)
-                                        <a  href="admin/post/delete/{{$pt->id}}" type="button" class="btn btn-danger" 
+                                        <a  href="admin/post/delete-ads/{{$pt->id}}" type="button" class="btn btn-danger" 
                                             onclick='return confirm("Lưu Ý: Sau khi xóa dữ liệu liên quan cũng sẽ mất.\n           Có chắc muốn xóa dòng này?");'>
                                             Xóa
                                         </a>

@@ -23,8 +23,8 @@ class MainMenuController extends Controller
         $menu->main_cate_name = $request->main_cate_name;
         $menu->main_cate_seolink = removeURL($request->main_cate_name);
         $menu->main_cate_status = 1;
-        $menu->created_at =  date("Y-m-d");
-        $menu->updated_at =  date("Y-m-d");
+        $menu->created_at =  date('Y-m-d');
+        $menu->updated_at =  date('Y-m-d');
         $menu->fk_idManager = 1;  
         $menu->save();
         return redirect('admin/main-menu/get-main-menu-list')->with('notification','Thêm thành công !!!');
@@ -50,7 +50,7 @@ class MainMenuController extends Controller
         $menu->main_cate_name = $request->main_cate_name;
         $menu->main_cate_seolink = removeURL($request->main_cate_name);
         $menu->main_cate_status = $request->status;
-        $menu->updated_at =  date("Y-m-d");
+        $menu->updated_at =  date('Y-m-d');
         $menu->save();
         return redirect('admin/main-menu/edit/'.$id)->with('notification','Đã cập nhật thành công.');
     }

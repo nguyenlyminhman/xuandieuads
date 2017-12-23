@@ -6,7 +6,7 @@
             </div>
             <div id="Hot" class="tabsalecontent">
                 @foreach($mmenu as $hot)
-                    <?php $data = $hot->post->where('high_light',0)->sortByDesc('created_at')->take(10) ?>
+                    <?php $data = $hot->post->where('high_light',0)->sortByDesc('id')->take(10) ?>
                     @foreach($data->all() as $ht)
                         <div class="row">
                             <div class="media">
@@ -65,7 +65,9 @@
                 <h4>Mua Online</h4>
             </div>
             @foreach($mmenu as $onl)
-                <?php $data = $onl->post->where('online',0)->sortByDesc('created_at')->take(15) ?>
+            <!--$data = $onl->post->where('online',0)->sortByDesc('created_at')->take(15)-->
+            
+                <?php $data = $onl->post->where('online',0)->sortByDesc('id')->take(15) ?>
                 @foreach($data->all() as $online)
                     <div class="interesting-ads">
                         <div class="row">

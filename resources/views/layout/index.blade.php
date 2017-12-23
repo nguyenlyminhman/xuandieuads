@@ -4,6 +4,7 @@
 <html lang="en">
 <!-- saved from url=(0060)https://getbootstrap.com/docs/3.3/examples/navbar-fixed-top/ -->
 <head>
+<link REL="SHORTCUT ICON" HREF="favicon.ico">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">

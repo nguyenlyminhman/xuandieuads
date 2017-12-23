@@ -23,7 +23,7 @@
                             </p>
                         </div>
                         <div class="row">
-                            <a target="_blank" href="chi-tiet-khuyen-mai/{{$home->id}}/{{$home->title_seolink}}.html" type="button" class="btn btn-default">
+                            <a target="_blank" href="{{$home->link_to}}" type="button" class="btn btn-default">
                                 Xem thêm
                             </a>
                             

@@ -27,7 +27,7 @@ class PagesController extends Controller
     }
     //
     function getHome(){
-        $khuyenmai = MainCategory::find(1)->post()->paginate();
+        $khuyenmai = MainCategory::find(1)->post()->latest()->paginate(15);
         return view('pages.home', ['title'=>'Trang chủ', 'khuyenmai'=>$khuyenmai]);
     }
     //dang lam

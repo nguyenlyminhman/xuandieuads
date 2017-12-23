@@ -102,7 +102,7 @@ class ImageController extends Controller
 
     public function deleteImage($id){
         $image = Image::find($id);
-        unlink("upload/image/".$image->img_name);
+        unlink("public/upload/image/".$image->img_name);
         $image->delete();
         return redirect("admin/image/get-all-image")->with('notification','Đã xóa thành công !!!');;
     }

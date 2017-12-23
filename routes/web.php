@@ -77,7 +77,8 @@ Route::group(['prefix'=>'admin', 'middleware'=>'adminlogin'], function(){
         Route::post('edit-ads/{id}', 'PostController@updateAds');
         Route::post('edit-discount/{id}', 'PostController@updateDiscount');
         //deleting discount post information
-        Route::get('delete/{id}', 'PostController@deletePost');
+        Route::get('delete-ads/{id}', 'PostController@deleteAds');
+        Route::get('delete-discount/{id}', 'PostController@deleteDiscount');
         //get all post
         Route::get('get-all-ads', 'PostController@getPostAds');
         Route::get('get-all-discount', 'PostController@getPostDiscount');
